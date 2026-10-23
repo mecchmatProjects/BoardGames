@@ -1,1 +1,31 @@
 *.exe
+### Java / Maven build artifacts ###
+target/
+**/target/
+build/
+**/build/
+*.class
+*.jar
+*.war
+*.ear
+
+### IntelliJ IDEA configuration ###
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+**/out/
+.mvn/
+
+### VS Code (якщо хтось із команди відкриє) ###
+.vscode/
+
+### Бази даних (щоб локальні тестові БД не потрапляли в Git) ###
+*.db
+*.sqlite
+*.sqlite3
+
+### Системні файли ОС ###
+.DS_Store
+Thumbs.db
