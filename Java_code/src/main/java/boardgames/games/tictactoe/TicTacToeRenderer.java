@@ -13,6 +13,8 @@ import java.util.List;
 public class TicTacToeRenderer {
 
     private static final char EMPTY_CELL = ' ';
+    private static final char INFINITE_EMPTY_CELL = '.';
+    private static final int INFINITE_MARGIN = 2;
 
     public static char symbolOf(PlayerRole player) {
         return switch (player) {
@@ -22,6 +24,9 @@ public class TicTacToeRenderer {
     }
 
     public String render(TicTacToeGame game) {
+        if (game.isInfinite()) {
+            return renderInfinite(game);
+        }
         int size = game.getSize();
         int width = String.valueOf(size).length();
         String separator = " ".repeat(width + 1)
@@ -36,6 +41,36 @@ public class TicTacToeRenderer {
             lines.add(renderRow(game, row, width));
         }
         return String.join(System.lineSeparator(), lines);
+    }
+
+    /** Показує прямокутник навколо зайнятих клітинок (і центру) з відступом. */
+    private String renderInfinite(TicTacToeGame game) {
+        int minRow = 0, maxRow = 0, minCol = 0, maxCol = 0;
+        for (Coordinate c : game.getOccupiedCoordinates()) {
+            minRow = Math.min(minRow, c.row());
+            maxRow = Math.max(maxRow, c.row());
+            minCol = Math.min(minCol, c.col());
+            maxCol = Math.max(maxCol, c.col());
+        }
+        minRow -= INFINITE_MARGIN;
+        maxRow += INFINITE_MARGIN;
+        minCol -= INFINITE_MARGIN;
+        maxCol += INFINITE_MARGIN;
+
+        StringBuilder sb = new StringBuilder("     ");
+        for (int col = minCol; col <= maxCol; col++) {
+            sb.append(String.format("%3d", col));
+        }
+        for (int row = minRow; row <= maxRow; row++) {
+            sb.append(System.lineSeparator()).append(String.format("%4d ", row));
+            for (int col = minCol; col <= maxCol; col++) {
+                char symbol = game.getCellOwner(new Coordinate(row, col))
+                        .map(TicTacToeRenderer::symbolOf)
+                        .orElse(INFINITE_EMPTY_CELL);
+                sb.append("  ").append(symbol);
+            }
+        }
+        return sb.toString();
     }
 
     private String renderHeader(int size, int width) {

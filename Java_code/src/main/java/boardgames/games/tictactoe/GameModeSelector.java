@@ -1,8 +1,5 @@
 package boardgames.games.tictactoe;
 
-
-import boardgames.games.tictactoe.GameMode;
-
 import java.io.PrintStream;
 import java.util.Optional;
 import java.util.Scanner;
@@ -47,7 +44,7 @@ public class GameModeSelector {
     }
 
     private void printMenu(GameMode[] modes) {
-        out.println("Оберіть розмір поля:");
+        out.println("Оберіть режим гри:");
         for (int i = 0; i < modes.length; i++) {
             out.printf("  %d — %s%n", i + 1, modes[i].getLabel());
         }

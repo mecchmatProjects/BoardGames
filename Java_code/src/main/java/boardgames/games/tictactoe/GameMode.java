@@ -2,11 +2,13 @@ package boardgames.games.tictactoe;
 
 /**
  * Доступні режими гри: розмір поля та довжина виграшної лінії.
+ * Розмір 0 означає нескінченне поле.
  */
 public enum GameMode {
     CLASSIC(3, 3),
     MEDIUM(8, 5),
-    LARGE(10, 5);
+    LARGE(10, 5),
+    INFINITE(0, 5);
 
     private final int size;
     private final int winLength;
@@ -24,7 +26,13 @@ public enum GameMode {
         return winLength;
     }
 
+    public boolean isInfinite() {
+        return size == 0;
+    }
+
     public String getLabel() {
-        return size + " на " + size + " (лінія з " + winLength + ")";
+        return isInfinite()
+                ? "нескінченне поле (лінія з " + winLength + ")"
+                : size + " на " + size + " (лінія з " + winLength + ")";
     }
 }

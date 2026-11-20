@@ -46,7 +46,9 @@ public class TicTacToeConsoleSession {
     private void printWelcome() {
         out.println("=== " + game.getName() + " ===");
         out.println(game.getRules());
-        out.println("Вводьте хід як \"рядок стовпець\" (наприклад: 2 3). Для виходу — \"" + QUIT_COMMAND + "\".");
+        out.println("Вводьте хід як \"рядок стовпець\" (наприклад: "
+                + (game.isInfinite() ? "2 -3" : "2 3")
+                + "). Для виходу — \"" + QUIT_COMMAND + "\".");
     }
 
     /**
@@ -76,7 +78,7 @@ public class TicTacToeConsoleSession {
             if (game.makeMove(move)) {
                 return true;
             }
-            out.println("Помилка: клітинка " + move.getTo() + " вже зайнята.");
+            out.println("Помилка: ця клітинка вже зайнята.");
         } catch (IllegalArgumentException e) {
             out.println("Помилка: " + e.getMessage());
         }
