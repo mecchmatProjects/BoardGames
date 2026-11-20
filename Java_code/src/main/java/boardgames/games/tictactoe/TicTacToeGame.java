@@ -13,21 +13,44 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Класичні хрестики-нулики 3x3 на базі {@link FixedBoard}.
- * Першим ходить {@link PlayerRole#FIRST}.
+ * Хрестики-нулики на квадратному полі із налаштовуваним розміром та довжиною виграшної лінії.
  */
 public class TicTacToeGame implements Game<Move.Place> {
 
-    public static final int SIZE = 3;
-    private static final int WIN_LENGTH = 3;
+    private static final int MIN_SIZE = 3;
 
-    // Напрямки (рядок, стовпець): горизонталь, вертикаль, дві діагоналі.
+    /** Напрямки (рядок, стовпець): горизонталь, вертикаль, дві діагоналі. */
     private static final int[][] DIRECTIONS = {{0, 1}, {1, 0}, {1, 1}, {1, -1}};
 
-    private final Board<PlayerRole> board = new FixedBoard<>(SIZE, SIZE);
+    private final int size;
+    private final int winLength;
+    private final Board<PlayerRole> board;
+
     private PlayerRole currentTurn = PlayerRole.FIRST;
     private GameResult result = GameResult.inProgress();
     private int movesCount = 0;
+
+    /** Класична гра 3x3. */
+    public TicTacToeGame() {
+        this(GameMode.CLASSIC);
+    }
+
+    public TicTacToeGame(GameMode mode) {
+        this(mode.getSize(), mode.getWinLength());
+    }
+
+    public TicTacToeGame(int size, int winLength) {
+        if (size < MIN_SIZE) {
+            throw new IllegalArgumentException("Розмір поля має бути не менше " + MIN_SIZE);
+        }
+        if (winLength < MIN_SIZE || winLength > size) {
+            throw new IllegalArgumentException(
+                    "Довжина лінії має бути від " + MIN_SIZE + " до " + size);
+        }
+        this.size = size;
+        this.winLength = winLength;
+        this.board = new FixedBoard<>(size, size);
+    }
 
     @Override
     public String getName() {
@@ -36,8 +59,8 @@ public class TicTacToeGame implements Game<Move.Place> {
 
     @Override
     public String getRules() {
-        return "Гравці по черзі ставлять свої знаки на поле 3x3. "
-                + "Перемагає той, хто першим вибудує лінію з трьох своїх знаків "
+        return "Гравці по черзі ставлять свої знаки на поле " + size + "x" + size + ". "
+                + "Перемагає той, хто першим вибудує лінію з " + winLength + " своїх знаків "
                 + "по горизонталі, вертикалі або діагоналі. "
                 + "Якщо поле заповнене і лінії немає — нічия.";
     }
@@ -52,10 +75,6 @@ public class TicTacToeGame implements Game<Move.Place> {
         return result;
     }
 
-    /**
-     * @return {@code true}, якщо хід виконано; {@code false}, якщо гру завершено
-     *         або клітинка недоступна (зайнята чи поза межами поля)
-     */
     @Override
     public boolean makeMove(Move.Place move) {
         if (move == null || result.isFinished() || !board.isEmpty(move.getTo())) {
@@ -76,8 +95,8 @@ public class TicTacToeGame implements Game<Move.Place> {
         if (result.isFinished()) {
             return moves;
         }
-        for (int row = 0; row < SIZE; row++) {
-            for (int col = 0; col < SIZE; col++) {
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
                 if (board.isEmpty(new Coordinate(row, col))) {
                     moves.add(new Move.Place(row, col));
                 }
@@ -93,7 +112,7 @@ public class TicTacToeGame implements Game<Move.Place> {
     }
 
     public int getSize() {
-        return SIZE;
+        return size;
     }
 
     /** Read-only доступ до стану клітинки для відображення. */
@@ -105,7 +124,7 @@ public class TicTacToeGame implements Game<Move.Place> {
         if (isWinningMove(lastMove, currentTurn)) {
             return GameResult.win(currentTurn);
         }
-        if (movesCount == SIZE * SIZE) {
+        if (movesCount == size * size) {
             return GameResult.draw();
         }
         return GameResult.inProgress();
@@ -116,7 +135,7 @@ public class TicTacToeGame implements Game<Move.Place> {
             int lineLength = 1
                     + countInDirection(lastMove, player, direction[0], direction[1])
                     + countInDirection(lastMove, player, -direction[0], -direction[1]);
-            if (lineLength >= WIN_LENGTH) {
+            if (lineLength >= winLength) {
                 return true;
             }
         }

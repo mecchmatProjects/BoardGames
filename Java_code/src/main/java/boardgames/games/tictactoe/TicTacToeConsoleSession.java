@@ -3,13 +3,8 @@ package boardgames.games.tictactoe;
 import boardgames.core.GameResult;
 import boardgames.core.Move;
 import boardgames.core.PlayerRole;
-import boardgames.games.tictactoe.MoveInputParser;
-import boardgames.games.tictactoe.TicTacToeGame;
-import boardgames.games.tictactoe.TicTacToeRenderer;
 
-import java.io.InputStream;
 import java.io.PrintStream;
-import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /**
@@ -25,11 +20,11 @@ public class TicTacToeConsoleSession {
     private final Scanner scanner;
     private final PrintStream out;
 
-    public TicTacToeConsoleSession(TicTacToeGame game, InputStream in, PrintStream out) {
+    public TicTacToeConsoleSession(TicTacToeGame game, Scanner scanner, PrintStream out) {
         this.game = game;
         this.renderer = new TicTacToeRenderer();
         this.parser = new MoveInputParser(game.getSize());
-        this.scanner = new Scanner(in, StandardCharsets.UTF_8);
+        this.scanner = scanner;
         this.out = out;
     }
 

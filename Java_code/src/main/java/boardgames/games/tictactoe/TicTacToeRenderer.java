@@ -23,36 +23,42 @@ public class TicTacToeRenderer {
 
     public String render(TicTacToeGame game) {
         int size = game.getSize();
-        String separator = "  " + String.join("+", Collections.nCopies(size, "---"));
+        int width = String.valueOf(size).length();
+        String separator = " ".repeat(width + 1)
+                + String.join("+", Collections.nCopies(size, "-".repeat(width + 2)));
 
         List<String> lines = new ArrayList<>();
-        lines.add(renderHeader(size));
+        lines.add(renderHeader(size, width));
         for (int row = 0; row < size; row++) {
             if (row > 0) {
                 lines.add(separator);
             }
-            lines.add(renderRow(game, row));
+            lines.add(renderRow(game, row, width));
         }
         return String.join(System.lineSeparator(), lines);
     }
 
-    private String renderHeader(int size) {
+    private String renderHeader(int size, int width) {
         List<String> labels = new ArrayList<>();
         for (int col = 1; col <= size; col++) {
-            labels.add(String.valueOf(col));
+            labels.add(pad(String.valueOf(col), width));
         }
-        return "   " + String.join("   ", labels);
+        return " ".repeat(width + 2) + String.join("   ", labels);
     }
 
-    private String renderRow(TicTacToeGame game, int row) {
+    private String renderRow(TicTacToeGame game, int row, int width) {
         List<String> cells = new ArrayList<>();
         for (int col = 0; col < game.getSize(); col++) {
-            cells.add(String.valueOf(cellSymbol(game, new Coordinate(row, col))));
+            cells.add(pad(String.valueOf(cellSymbol(game, new Coordinate(row, col))), width));
         }
-        return (row + 1) + " " + " " + String.join(" | ", cells) + " ";
+        return pad(String.valueOf(row + 1), width) + "  " + String.join(" | ", cells) + " ";
     }
 
     private char cellSymbol(TicTacToeGame game, Coordinate coord) {
         return game.getCellOwner(coord).map(TicTacToeRenderer::symbolOf).orElse(EMPTY_CELL);
+    }
+
+    private String pad(String text, int width) {
+        return text + " ".repeat(width - text.length());
     }
 }
