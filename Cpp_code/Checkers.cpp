@@ -1,226 +1,116 @@
-#include "Checkers.h"
+#include "checkers.h"
+#include <cmath>
 
-#include <algorithm>
-#include <cctype>
-#include <string>
 
-namespace checkers {
 
-namespace {
+Piece::Piece(Color c, PieceType t) : color(c), type(t) {}
 
-constexpr int BoardSize = 8;
 
-}  // namespace
 
-bool Position::operator==(const Position& other) const {
-    return row == other.row && column == other.column;
-}
-
-bool Move::operator==(const Move& other) const {
-    return from == other.from && to == other.to && captured == other.captured;
-}
-
-Game::Game() {
-    for (auto& row : board_) {
-        row.fill('.');
+Board::Board() {
+    grid.resize(8);
+    for (int i = 0; i < 8; ++i) {
+        grid[i].resize(8);
     }
-
-    for (int row = 0; row < 3; ++row) {
-        for (int column = 0; column < BoardSize; ++column) {
-            if ((row + column) % 2 == 1) {
-                board_[row][column] = 'b';
-            }
-        }
-    }
-
-    for (int row = 5; row < BoardSize; ++row) {
-        for (int column = 0; column < BoardSize; ++column) {
-            if ((row + column) % 2 == 1) {
-                board_[row][column] = 'r';
-            }
-        }
-    }
+    initialize();
 }
 
-const std::array<std::array<char, 8>, 8>& Game::board() const {
-    return board_;
-}
-
-Player Game::currentPlayer() const {
-    return currentPlayer_;
-}
-
-std::optional<Player> Game::winner() const {
-    return winner_;
-}
-
-bool Game::gameOver() const {
-    return winner_.has_value();
-}
-
-bool Game::isForcedCapture() const {
-    return forcedPiece_.has_value();
-}
-
-std::optional<Position> Game::forcedPiece() const {
-    return forcedPiece_;
-}
-
-std::vector<Move> Game::legalMoves() const {
-    std::vector<Move> captures;
-    std::vector<Move> regularMoves;
-
-    for (int row = 0; row < BoardSize; ++row) {
-        for (int column = 0; column < BoardSize; ++column) {
-            const Position from{row, column};
-            if (!isPlayerPiece(board_[row][column], currentPlayer_)) {
-                continue;
-            }
-
-            for (const Move& move : movesForPiece(from, false)) {
-                if (move.captured.has_value()) {
-                    captures.push_back(move);
-                } else {
-                    regularMoves.push_back(move);
+void Board::initialize() {
+    for (int row = 0; row < 8; ++row) {
+        for (int col = 0; col < 8; ++col) {
+            grid[row][col].reset();
+            if ((row + col) % 2 != 0) {
+                if (row < 3) {
+                    grid[row][col] = std::make_unique<Piece>(Color::Black);
+                } else if (row > 4) {
+                    grid[row][col] = std::make_unique<Piece>(Color::White);
                 }
             }
         }
     }
-
-    return captures.empty() ? regularMoves : captures;
 }
 
-std::vector<Move> Game::legalMovesFrom(Position from) const {
-    if (!isInsideBoard(from) ||
-        !isPlayerPiece(board_[from.row][from.column], currentPlayer_)) {
-        return {};
-    }
-
-    if (forcedPiece_.has_value() && !(from == *forcedPiece_)) {
-        return {};
-    }
-
-    std::vector<Move> moves = movesForPiece(from, false);
-    const std::vector<Move> allMoves = legalMoves();
-    const bool capturesRequired = !allMoves.empty() && allMoves.front().captured.has_value();
-
-    if (capturesRequired || forcedPiece_.has_value()) {
-        moves.erase(
-            std::remove_if(moves.begin(), moves.end(), [](const Move& move) {
-                return !move.captured.has_value();
-            }),
-            moves.end());
-    }
-
-    return moves;
+Piece* Board::getPiece(Position pos) const {
+    if (!pos.isValid()) return nullptr;
+    return grid[pos.row][pos.col].get();
 }
 
-bool Game::makeMove(const Move& move) {
-    const std::vector<Move> moves = legalMovesFrom(move.from);
-    bool isLegal = false;
-    for (const Move& legalMove : moves) {
-        if (legalMove == move) {
-            isLegal = true;
-            break;
+bool Board::isEmpty(Position pos) const {
+    return pos.isValid() && grid[pos.row][pos.col] == nullptr;
+}
+
+bool Board::evaluateRawMove(Position from, Position to, Color player, bool& isCapture, Position& capturedPos) const {
+    if (!from.isValid() || !to.isValid() || !isEmpty(to)) return false;
+
+    Piece* piece = getPiece(from);
+    if (!piece || piece->getColor() != player) return false;
+
+    int dRow = to.row - from.row;
+    int dCol = to.col - from.col;
+
+    if (dRow == 0 || std::abs(dRow) != std::abs(dCol)) return false;
+
+    isCapture = false;
+    capturedPos = {-1, -1};
+
+    if (piece->getType() == PieceType::Man) {
+        int forwardDir = (player == Color::White) ? -1 : 1;
+
+        // Normal 1-step forward diagonal move
+        if (dRow == forwardDir && std::abs(dCol) == 1) {
+            return true;
         }
-    }
-    if (!isLegal) {
-        return false;
-    }
 
-    char piece = board_[move.from.row][move.from.column];
-    board_[move.from.row][move.from.column] = '.';
-    if (move.captured.has_value()) {
-        board_[move.captured->row][move.captured->column] = '.';
-    }
+        // Capture jump (2 squares diagonally, forward or backward)
+        if (std::abs(dRow) == 2 && std::abs(dCol) == 2) {
+            Position mid{from.row + dRow / 2, from.col + dCol / 2};
+            Piece* midPiece = getPiece(mid);
+            if (midPiece && midPiece->getColor() != player) {
+                isCapture = true;
+                capturedPos = mid;
+                return true;
+            }
+        }
+    } else if (piece->getType() == PieceType::King) {
+        int stepRow = (dRow > 0) ? 1 : -1;
+        int stepCol = (dCol > 0) ? 1 : -1;
+        int enemiesCount = 0;
+        Position enemyPos{-1, -1};
 
-    const bool reachedKingRow =
-        (piece == 'r' && move.to.row == 0) || (piece == 'b' && move.to.row == BoardSize - 1);
-    if (reachedKingRow) {
-        piece = static_cast<char>(std::toupper(static_cast<unsigned char>(piece)));
-    }
-    board_[move.to.row][move.to.column] = piece;
+        for (int r = from.row + stepRow, c = from.col + stepCol; r != to.row; r += stepRow, c += stepCol) {
+            Piece* p = getPiece({r, c});
+            if (p) {
+                if (p->getColor() == player) {
+                    return false;
+                }
+                enemiesCount++;
+                enemyPos = {r, c};
+            }
+        }
 
-    if (move.captured.has_value() && !reachedKingRow) {
-        const std::vector<Move> nextCaptures = movesForPiece(move.to, true);
-        if (!nextCaptures.empty()) {
-            forcedPiece_ = move.to;
+        if (enemiesCount == 0) {
+            return true;
+        }
+        if (enemiesCount == 1) {
+            isCapture = true;
+            capturedPos = enemyPos;
             return true;
         }
     }
 
-    forcedPiece_.reset();
-    currentPlayer_ = currentPlayer_ == Player::Red ? Player::Black : Player::Red;
-    updateWinner();
-    return true;
+    return false;
 }
 
-std::optional<Position> Game::parsePosition(const char* text) {
-    if (text == nullptr) {
-        return std::nullopt;
-    }
+bool Board::hasCaptureFrom(Position from, Color player) const {
+    Piece* piece = getPiece(from);
+    if (!piece || piece->getColor() != player) return false;
 
-    std::string coordinate(text);
-    if (coordinate.size() != 2) {
-        return std::nullopt;
-    }
+    bool isCapture = false;
+    Position capturedPos{-1, -1};
 
-    const char column = static_cast<char>(
-        std::tolower(static_cast<unsigned char>(coordinate[0])));
-    const char row = coordinate[1];
-    if (column < 'a' || column > 'h' || row < '1' || row > '8') {
-        return std::nullopt;
-    }
-
-    return Position{BoardSize - (row - '0'), column - 'a'};
-}
-
-char Game::playerName(Player player) {
-    return player == Player::Red ? 'R' : 'B';
-}
-
-std::vector<Move> Game::movesForPiece(Position from, bool capturesOnly) const {
-    std::vector<Move> moves;
-    if (!isInsideBoard(from) || board_[from.row][from.column] == '.') {
-        return moves;
-    }
-
-    const char piece = board_[from.row][from.column];
-    const int forward = std::tolower(static_cast<unsigned char>(piece)) == 'r' ? -1 : 1;
-    const int rowDirections[] = {forward, -forward};
-    const int directionCount = isKing(piece) ? 2 : 1;
-    const int columnDirections[] = {-1, 1};
-
-    for (int rowIndex = 0; rowIndex < directionCount; ++rowIndex) {
-        for (int columnDirection : columnDirections) {
-            const int rowDirection = rowDirections[rowIndex];
-            const Position adjacent{from.row + rowDirection, from.column + columnDirection};
-            const Position landing{from.row + 2 * rowDirection,
-                                   from.column + 2 * columnDirection};
-
-            if (isInsideBoard(adjacent) && isInsideBoard(landing) &&
-                board_[landing.row][landing.column] == '.' &&
-                !isPlayerPiece(board_[adjacent.row][adjacent.column], currentPlayer_)) {
-                const char jumpedPiece = board_[adjacent.row][adjacent.column];
-                if (jumpedPiece != '.') {
-                    moves.push_back(Move{from, landing, adjacent});
-                }
-            }
-
-            if (!capturesOnly && isInsideBoard(adjacent) &&
-                board_[adjacent.row][adjacent.column] == '.') {
-                moves.push_back(Move{from, adjacent, std::nullopt});
-            }
-        }
-    }
-
-    return moves;
-}
-
-bool Game::hasPieces(Player player) const {
-    for (const auto& row : board_) {
-        for (char piece : row) {
-            if (isPlayerPiece(piece, player)) {
+    for (int r = 0; r < 8; ++r) {
+        for (int c = 0; c < 8; ++c) {
+            if (evaluateRawMove(from, {r, c}, player, isCapture, capturedPos) && isCapture) {
                 return true;
             }
         }
@@ -228,27 +118,317 @@ bool Game::hasPieces(Player player) const {
     return false;
 }
 
-bool Game::isPlayerPiece(char piece, Player player) const {
-    if (piece == '.') {
+bool Board::hasAnyCapture(Color player) const {
+    for (int r = 0; r < 8; ++r) {
+        for (int c = 0; c < 8; ++c) {
+            if (hasCaptureFrom({r, c}, player)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+std::vector<MoveInfo> Board::getLegalMovesForPiece(Position from, Color player, std::optional<Position> forcedPiece) const {
+    std::vector<MoveInfo> moves;
+    if (!from.isValid()) return moves;
+
+
+    if (forcedPiece.has_value() && !(from == forcedPiece.value())) {
+        return moves;
+    }
+
+    Piece* piece = getPiece(from);
+    if (!piece || piece->getColor() != player) return moves;
+
+    bool mustCapture = forcedPiece.has_value() || hasAnyCapture(player);
+
+    for (int r = 0; r < 8; ++r) {
+        for (int c = 0; c < 8; ++c) {
+            Position to{r, c};
+            bool isCapture = false;
+            Position capturedPos{-1, -1};
+
+            if (evaluateRawMove(from, to, player, isCapture, capturedPos)) {
+                if (mustCapture && !isCapture) {
+                    continue;
+                }
+                moves.push_back(MoveInfo{to, isCapture, capturedPos});
+            }
+        }
+    }
+
+    return moves;
+}
+
+bool Board::movePiece(Position from, Position to, Color currentPlayer,
+                      std::optional<Position> forcedPiece, bool& continuedCapture) {
+    continuedCapture = false;
+    std::vector<MoveInfo> legalMoves = getLegalMovesForPiece(from, currentPlayer, forcedPiece);
+
+    const MoveInfo* chosenMove = nullptr;
+    for (const auto& m : legalMoves) {
+        if (m.to == to) {
+            chosenMove = &m;
+            break;
+        }
+    }
+
+    if (!chosenMove) {
         return false;
     }
-    const char color = static_cast<char>(std::tolower(static_cast<unsigned char>(piece)));
-    return color == (player == Player::Red ? 'r' : 'b');
+
+    grid[to.row][to.col] = std::move(grid[from.row][from.col]);
+
+    if (chosenMove->isCapture) {
+        grid[chosenMove->capturedPos.row][chosenMove->capturedPos.col].reset();
+    }
+
+    Piece* movedPiece = getPiece(to);
+    if (movedPiece->getType() == PieceType::Man) {
+        if ((currentPlayer == Color::White && to.row == 0) ||
+            (currentPlayer == Color::Black && to.row == 7)) {
+            movedPiece->promote();
+        }
+    }
+
+
+    if (chosenMove->isCapture && hasCaptureFrom(to, currentPlayer)) {
+        continuedCapture = true;
+    }
+
+    return true;
 }
 
-bool Game::isKing(char piece) const {
-    return piece == 'R' || piece == 'B';
+int Board::countPieces(Color player) const {
+    int count = 0;
+    for (int r = 0; r < 8; ++r) {
+        for (int c = 0; c < 8; ++c) {
+            if (grid[r][c] && grid[r][c]->getColor() == player) {
+                count++;
+            }
+        }
+    }
+    return count;
 }
 
-bool Game::isInsideBoard(Position position) const {
-    return position.row >= 0 && position.row < BoardSize &&
-           position.column >= 0 && position.column < BoardSize;
+bool Board::hasValidMoves(Color player) const {
+    for (int r = 0; r < 8; ++r) {
+        for (int c = 0; c < 8; ++c) {
+            Position pos{r, c};
+            Piece* p = getPiece(pos);
+            if (p && p->getColor() == player) {
+                if (!getLegalMovesForPiece(pos, player, std::nullopt).empty()) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
 }
 
-void Game::updateWinner() {
-    if (!hasPieces(currentPlayer_) || legalMoves().empty()) {
-        winner_ = currentPlayer_ == Player::Red ? Player::Black : Player::Red;
+
+
+Game::Game()
+    : window(sf::VideoMode(static_cast<unsigned int>(BOARD_SIZE * TILE_SIZE),
+                           static_cast<unsigned int>(BOARD_SIZE * TILE_SIZE)),
+             "Checkers", sf::Style::Titlebar | sf::Style::Close),
+      currentTurn(Color::White),
+      isGameOver(false) {
+    window.setFramerateLimit(60);
+    updateWindowTitle();
+}
+
+void Game::run() {
+    while (window.isOpen()) {
+        processEvents();
+        render();
     }
 }
 
-}  // namespace checkers
+void Game::processEvents() {
+    sf::Event event;
+    while (window.pollEvent(event)) {
+        if (event.type == sf::Event::Closed) {
+            window.close();
+        } else if (event.type == sf::Event::KeyPressed) {
+            if (event.key.code == sf::Keyboard::R) {
+                resetGame();
+            }
+        } else if (event.type == sf::Event::MouseButtonPressed && !isGameOver) {
+            if (event.mouseButton.button == sf::Mouse::Left) {
+                handleMouseClick(event.mouseButton.x, event.mouseButton.y);
+            }
+        }
+    }
+}
+
+void Game::refreshHighlightedMoves() {
+    highlightedMoves.clear();
+    if (selectedPos.has_value()) {
+        highlightedMoves = board.getLegalMovesForPiece(selectedPos.value(), currentTurn, forcedPiecePos);
+    }
+}
+
+void Game::handleMouseClick(int x, int y) {
+    int col = static_cast<int>(x / TILE_SIZE);
+    int row = static_cast<int>(y / TILE_SIZE);
+    Position clickedPos{row, col};
+
+    if (!clickedPos.isValid()) return;
+
+
+    if (selectedPos.has_value()) {
+        bool isTargetMove = false;
+        for (const auto& m : highlightedMoves) {
+            if (m.to == clickedPos) {
+                isTargetMove = true;
+                break;
+            }
+        }
+
+        if (isTargetMove) {
+            bool continuedCapture = false;
+            if (board.movePiece(selectedPos.value(), clickedPos, currentTurn, forcedPiecePos, continuedCapture)) {
+                if (continuedCapture) {
+                    // Keep turn and lock selection onto the capturing piece for the next jump
+                    forcedPiecePos = clickedPos;
+                    selectedPos = clickedPos;
+                    refreshHighlightedMoves();
+                } else {
+                    forcedPiecePos.reset();
+                    selectedPos.reset();
+                    highlightedMoves.clear();
+                    switchTurn();
+
+                    if (!board.hasValidMoves(currentTurn)) {
+                        isGameOver = true;
+                    }
+                }
+                updateWindowTitle();
+                return;
+            }
+        }
+    }
+
+
+    if (forcedPiecePos.has_value()) {
+        selectedPos = forcedPiecePos;
+        refreshHighlightedMoves();
+        return;
+    }
+
+    Piece* clickedPiece = board.getPiece(clickedPos);
+    if (clickedPiece && clickedPiece->getColor() == currentTurn) {
+        selectedPos = clickedPos;
+        refreshHighlightedMoves();
+    } else {
+        selectedPos.reset();
+        highlightedMoves.clear();
+    }
+}
+
+void Game::render() {
+    window.clear();
+
+    sf::RectangleShape tile(sf::Vector2f(TILE_SIZE, TILE_SIZE));
+    const sf::Color lightSquare(238, 238, 210);
+    const sf::Color darkSquare(118, 150, 86);
+    const sf::Color highlightSquare(186, 202, 68);
+    const sf::Color forcedSquare(214, 120, 50);
+
+    // Draw board squares and pieces
+    for (int row = 0; row < BOARD_SIZE; ++row) {
+        for (int col = 0; col < BOARD_SIZE; ++col) {
+            tile.setPosition(col * TILE_SIZE, row * TILE_SIZE);
+
+            if (forcedPiecePos.has_value() && forcedPiecePos->row == row && forcedPiecePos->col == col) {
+                tile.setFillColor(forcedSquare);
+            } else if (selectedPos.has_value() && selectedPos->row == row && selectedPos->col == col) {
+                tile.setFillColor(highlightSquare);
+            } else if ((row + col) % 2 == 0) {
+                tile.setFillColor(lightSquare);
+            } else {
+                tile.setFillColor(darkSquare);
+            }
+            window.draw(tile);
+
+            // Draw piece if present
+            Piece* piece = board.getPiece({row, col});
+            if (piece) {
+                float radius = TILE_SIZE * 0.38f;
+                sf::CircleShape circle(radius);
+                circle.setOrigin(radius, radius);
+                circle.setPosition(col * TILE_SIZE + TILE_SIZE / 2.f,
+                                   row * TILE_SIZE + TILE_SIZE / 2.f);
+
+                if (piece->getColor() == Color::White) {
+                    circle.setFillColor(sf::Color(245, 245, 245));
+                    circle.setOutlineColor(sf::Color(40, 40, 40));
+                } else {
+                    circle.setFillColor(sf::Color(35, 35, 35));
+                    circle.setOutlineColor(sf::Color(200, 200, 200));
+                }
+
+                if (piece->getType() == PieceType::King) {
+                    circle.setOutlineColor(sf::Color(255, 215, 0));
+                    circle.setOutlineThickness(6.f);
+                } else {
+                    circle.setOutlineThickness(3.f);
+                }
+
+                window.draw(circle);
+            }
+        }
+    }
+
+    // Draw legal move indicators for the selected piece
+    for (const auto& move : highlightedMoves) {
+        float markerRadius = move.isCapture ? TILE_SIZE * 0.18f : TILE_SIZE * 0.13f;
+        sf::CircleShape marker(markerRadius);
+        marker.setOrigin(markerRadius, markerRadius);
+        marker.setPosition(move.to.col * TILE_SIZE + TILE_SIZE / 2.f,
+                           move.to.row * TILE_SIZE + TILE_SIZE / 2.f);
+
+        if (move.isCapture) {
+            marker.setFillColor(sf::Color(220, 50, 47, 210));
+            marker.setOutlineColor(sf::Color(255, 255, 255, 220));
+            marker.setOutlineThickness(2.f);
+        } else {
+            marker.setFillColor(sf::Color(30, 120, 220, 190));
+            marker.setOutlineColor(sf::Color(255, 255, 255, 200));
+            marker.setOutlineThickness(2.f);
+        }
+
+        window.draw(marker);
+    }
+
+    window.display();
+}
+
+void Game::switchTurn() {
+    currentTurn = (currentTurn == Color::White) ? Color::Black : Color::White;
+}
+
+void Game::updateWindowTitle() {
+    if (isGameOver) {
+        std::string winner = (currentTurn == Color::White) ? "Black" : "White";
+        window.setTitle("Checkers - Game Over! " + winner + " wins! (Press R to restart)");
+    } else if (forcedPiecePos.has_value()) {
+        std::string turnStr = (currentTurn == Color::White) ? "White" : "Black";
+        window.setTitle("Checkers - " + turnStr + " multi-capture in progress! (Press R to restart)");
+    } else {
+        std::string turnStr = (currentTurn == Color::White) ? "White's Turn" : "Black's Turn";
+        window.setTitle("Checkers - " + turnStr + " (Press R to restart)");
+    }
+}
+
+void Game::resetGame() {
+    board.initialize();
+    currentTurn = Color::White;
+    isGameOver = false;
+    selectedPos.reset();
+    forcedPiecePos.reset();
+    highlightedMoves.clear();
+    updateWindowTitle();
+}
