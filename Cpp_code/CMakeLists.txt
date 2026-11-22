@@ -17,6 +17,7 @@ FetchContent_MakeAvailable(SFML)
 add_executable(checkers
         main.cpp
         checkers.cpp
+        Chess.cpp
 )
 
 target_link_libraries(checkers PRIVATE sfml-graphics)
