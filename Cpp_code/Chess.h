@@ -9,7 +9,12 @@
 #include <thread>
 #include <vector>
 
-
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <sys/types.h>
+#include <unistd.h>
+#endif
 
 enum class ChessColor {
     None,
@@ -160,6 +165,7 @@ public:
     void cancel();
 
     const std::string& exePath() const { return exePath; }
+    void setExePath(const std::string& path); // cancels any active search
 
 private:
     std::string exePath;
@@ -215,6 +221,8 @@ private:
     StockfishEngine engine;
     bool engineThinking = false;
     std::string engineError;
+    bool enginePathInput = false;   // 'F' opens typed engine-path input
+    std::string enginePathBuffer;
 
     void processEvents();
     void handleMouseClick(int x, int y);
@@ -224,6 +232,7 @@ private:
     void resetGame();
 
     // Bot helpers
+    void applyChosenMove(const ChessMove& move);
     void startEngineIfNeeded();
     void pollEngine();
     void applyEngineMove(const std::string& bestMove);
