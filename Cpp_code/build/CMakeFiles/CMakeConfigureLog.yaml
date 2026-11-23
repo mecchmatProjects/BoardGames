@@ -1,0 +1,2543 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineSystem.cmake:218 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.19045 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:501 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:538 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.51+25f168cee for .NET Framework
+      Build started 23/11/2026 02:31:11.
+      
+      Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\4.4.4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\4.4.4\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\4.4.4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:01.26
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/4.4.4/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:64 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:102 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/markp/.dotnet/tools/"
+      - "C:/Users/markp/AppData/Roaming/npm/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:64 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/markp/.dotnet/tools/"
+      - "C:/Users/markp/AppData/Roaming/npm/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/lld-link.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/lld-link.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/lld-link"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files/Tailscale/lld-link.com"
+      - "C:/Program Files/Tailscale/lld-link.exe"
+      - "C:/Program Files/Tailscale/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/lld-link.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/lld-link"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/lld-link.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/lld-link"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/lld-link.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/lld-link"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/lld-link"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "C:/Users/markp/.dotnet/tools/lld-link.com"
+      - "C:/Users/markp/.dotnet/tools/lld-link.exe"
+      - "C:/Users/markp/.dotnet/tools/lld-link"
+      - "C:/Users/markp/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/markp/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/markp/AppData/Roaming/npm/lld-link"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/lld-link.com"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/markp/.dotnet/tools/"
+      - "C:/Users/markp/AppData/Roaming/npm/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_MT"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "mt"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/markp/.dotnet/tools/"
+      - "C:/Users/markp/AppData/Roaming/npm/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt"
+      - "C:/Program Files/CMake/bin/mt.com"
+      - "C:/Program Files/CMake/bin/mt.exe"
+      - "C:/Program Files/CMake/bin/mt"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mt.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mt.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mt"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/mt.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/mt.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/mt"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/mt.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/mt.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/mt"
+      - "C:/Windows/System32/mt.com"
+      - "C:/Windows/System32/mt.exe"
+      - "C:/Windows/System32/mt"
+      - "C:/Windows/mt.com"
+      - "C:/Windows/mt.exe"
+      - "C:/Windows/mt"
+      - "C:/Windows/System32/wbem/mt.com"
+      - "C:/Windows/System32/wbem/mt.exe"
+      - "C:/Windows/System32/wbem/mt"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt"
+      - "C:/Windows/System32/OpenSSH/mt.com"
+      - "C:/Windows/System32/OpenSSH/mt.exe"
+      - "C:/Windows/System32/OpenSSH/mt"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mt.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mt.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mt"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt"
+      - "C:/Program Files/Git/cmd/mt.com"
+      - "C:/Program Files/Git/cmd/mt.exe"
+      - "C:/Program Files/Git/cmd/mt"
+      - "C:/Program Files/Tailscale/mt.com"
+      - "C:/Program Files/Tailscale/mt.exe"
+      - "C:/Program Files/Tailscale/mt"
+      - "C:/Program Files/dotnet/mt.com"
+      - "C:/Program Files/dotnet/mt.exe"
+      - "C:/Program Files/dotnet/mt"
+      - "C:/Program Files/nodejs/mt.com"
+      - "C:/Program Files/nodejs/mt.exe"
+      - "C:/Program Files/nodejs/mt"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/mt.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/mt.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/mt"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/mt.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/mt.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/mt"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/mt.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/mt.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/mt"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/mt.com"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/mt.exe"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/mt"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/mt.com"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/mt.exe"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/mt"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/mt.com"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/mt.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/mt"
+      - "C:/Users/markp/.dotnet/tools/mt.com"
+      - "C:/Users/markp/.dotnet/tools/mt.exe"
+      - "C:/Users/markp/.dotnet/tools/mt"
+      - "C:/Users/markp/AppData/Roaming/npm/mt.com"
+      - "C:/Users/markp/AppData/Roaming/npm/mt.exe"
+      - "C:/Users/markp/AppData/Roaming/npm/mt"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/mt.com"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/mt.exe"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/mt"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lib"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/markp/.dotnet/tools/"
+      - "C:/Users/markp/AppData/Roaming/npm/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/Platform/Windows-MSVC.cmake:592 (enable_language)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/Platform/Windows-MSVC.cmake:565 (__windows_compiler_msvc_enable_rc)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/Platform/Windows-MSVC-CXX.cmake:6 (__windows_compiler_msvc)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeCXXInformation.cmake:48 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rc"
+    candidate_directories:
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/markp/.dotnet/tools/"
+      - "C:/Users/markp/AppData/Roaming/npm/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files/BoardGamesSFML/bin/"
+      - "C:/Program Files/BoardGamesSFML/sbin/"
+      - "C:/Program Files/BoardGamesSFML/"
+    searched_directories:
+      - "C:/Program Files/CMake/bin/rc.com"
+      - "C:/Program Files/CMake/bin/rc.exe"
+      - "C:/Program Files/CMake/bin/rc"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/rc.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/rc.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/rc"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/rc.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/rc.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/rc"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/rc.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/rc.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/rc"
+      - "C:/Windows/System32/rc.com"
+      - "C:/Windows/System32/rc.exe"
+      - "C:/Windows/System32/rc"
+      - "C:/Windows/rc.com"
+      - "C:/Windows/rc.exe"
+      - "C:/Windows/rc"
+      - "C:/Windows/System32/wbem/rc.com"
+      - "C:/Windows/System32/wbem/rc.exe"
+      - "C:/Windows/System32/wbem/rc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc"
+      - "C:/Windows/System32/OpenSSH/rc.com"
+      - "C:/Windows/System32/OpenSSH/rc.exe"
+      - "C:/Windows/System32/OpenSSH/rc"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/rc.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/rc.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/rc"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc"
+      - "C:/Program Files/Git/cmd/rc.com"
+      - "C:/Program Files/Git/cmd/rc.exe"
+      - "C:/Program Files/Git/cmd/rc"
+      - "C:/Program Files/Tailscale/rc.com"
+      - "C:/Program Files/Tailscale/rc.exe"
+      - "C:/Program Files/Tailscale/rc"
+      - "C:/Program Files/dotnet/rc.com"
+      - "C:/Program Files/dotnet/rc.exe"
+      - "C:/Program Files/dotnet/rc"
+      - "C:/Program Files/nodejs/rc.com"
+      - "C:/Program Files/nodejs/rc.exe"
+      - "C:/Program Files/nodejs/rc"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/rc.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/rc.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/rc"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/rc.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/rc.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/rc"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/rc.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/rc.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/rc"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/rc.com"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/rc.exe"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/rc"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/rc.com"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/rc.exe"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/rc"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/rc.com"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/rc.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/rc"
+      - "C:/Users/markp/.dotnet/tools/rc.com"
+      - "C:/Users/markp/.dotnet/tools/rc.exe"
+      - "C:/Users/markp/.dotnet/tools/rc"
+      - "C:/Users/markp/AppData/Roaming/npm/rc.com"
+      - "C:/Users/markp/AppData/Roaming/npm/rc.exe"
+      - "C:/Users/markp/AppData/Roaming/npm/rc"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/rc.com"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/rc.exe"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/rc"
+      - "C:/Program Files/bin/rc.com"
+      - "C:/Program Files/bin/rc.exe"
+      - "C:/Program Files/bin/rc"
+      - "C:/Program Files/sbin/rc.com"
+      - "C:/Program Files/sbin/rc.exe"
+      - "C:/Program Files/sbin/rc"
+      - "C:/Program Files/rc.com"
+      - "C:/Program Files/rc.exe"
+      - "C:/Program Files/rc"
+      - "C:/Program Files (x86)/bin/rc.com"
+      - "C:/Program Files (x86)/bin/rc.exe"
+      - "C:/Program Files (x86)/bin/rc"
+      - "C:/Program Files (x86)/sbin/rc.com"
+      - "C:/Program Files (x86)/sbin/rc.exe"
+      - "C:/Program Files (x86)/sbin/rc"
+      - "C:/Program Files (x86)/rc.com"
+      - "C:/Program Files (x86)/rc.exe"
+      - "C:/Program Files (x86)/rc"
+      - "C:/Program Files/CMake/bin/rc.com"
+      - "C:/Program Files/CMake/bin/rc.exe"
+      - "C:/Program Files/CMake/bin/rc"
+      - "C:/Program Files/CMake/sbin/rc.com"
+      - "C:/Program Files/CMake/sbin/rc.exe"
+      - "C:/Program Files/CMake/sbin/rc"
+      - "C:/Program Files/CMake/rc.com"
+      - "C:/Program Files/CMake/rc.exe"
+      - "C:/Program Files/CMake/rc"
+      - "C:/Program Files/BoardGamesSFML/bin/rc.com"
+      - "C:/Program Files/BoardGamesSFML/bin/rc.exe"
+      - "C:/Program Files/BoardGamesSFML/bin/rc"
+      - "C:/Program Files/BoardGamesSFML/sbin/rc.com"
+      - "C:/Program Files/BoardGamesSFML/sbin/rc.exe"
+      - "C:/Program Files/BoardGamesSFML/sbin/rc"
+      - "C:/Program Files/BoardGamesSFML/rc.com"
+      - "C:/Program Files/BoardGamesSFML/rc.exe"
+      - "C:/Program Files/BoardGamesSFML/rc"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/BoardGamesSFML"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/BoardGamesSFML"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:123 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-venvcq"
+      binary: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-venvcq"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: false
+      stdout: |
+        Change Dir: 'C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-venvcq'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_03539.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.51+25f168cee for .NET Framework
+        Build started 23/11/2026 02:31:13.
+        
+        Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-venvcq\\cmTC_03539.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-venvcq\\Debug\\".
+          Creating directory "cmTC_03539.dir\\Debug\\cmTC_03539.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_03539.dir\\Debug\\cmTC_03539.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_03539.dir\\Debug\\cmTC_03539.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_03539.dir\\Debug\\\\" /Fd"cmTC_03539.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35228 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_03539.dir\\Debug\\\\" /Fd"cmTC_03539.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-venvcq\\Debug\\cmTC_03539.exe" /INCREMENTAL /ILK:"cmTC_03539.dir\\Debug\\cmTC_03539.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-venvcq/Debug/cmTC_03539.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-venvcq/Debug/cmTC_03539.lib" /MACHINE:X64  /machine:x64 cmTC_03539.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_03539.vcxproj -> C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-venvcq\\Debug\\cmTC_03539.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_03539.dir\\Debug\\cmTC_03539.tlog\\unsuccessfulbuild".
+          Touching "cmTC_03539.dir\\Debug\\cmTC_03539.tlog\\cmTC_03539.lastbuildstate".
+        Done Building Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-venvcq\\cmTC_03539.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.81
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:291 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        link line: [  C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-venvcq\\Debug\\cmTC_03539.exe" /INCREMENTAL /ILK:"cmTC_03539.dir\\Debug\\cmTC_03539.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-venvcq/Debug/cmTC_03539.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-venvcq/Debug/cmTC_03539.lib" /MACHINE:X64  /machine:x64 cmTC_03539.dir\\Debug\\CMakeCXXCompilerABI.obj] ==> linker [C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe]
+        linker tool for 'CXX': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe 
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/Internal/CMakeDetermineLinkerId.cmake:41 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:337 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35228.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindGit.cmake:111 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FetchContent.cmake:1889 (find_package)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FetchContent.cmake:1622 (__FetchContent_populateSubbuild)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FetchContent.cmake:2160:EVAL:2 (__FetchContent_doPopulation)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FetchContent.cmake:2160 (cmake_language)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FetchContent.cmake:2401 (__FetchContent_Populate)"
+      - "CMakeLists.txt:15 (FetchContent_MakeAvailable)"
+    mode: "program"
+    variable: "GIT_EXECUTABLE"
+    description: "Git command line client"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "git.cmd"
+      - "git"
+    candidate_directories:
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/markp/.dotnet/tools/"
+      - "C:/Users/markp/AppData/Roaming/npm/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files/BoardGamesSFML/bin/"
+      - "C:/Program Files/BoardGamesSFML/sbin/"
+      - "C:/Program Files/BoardGamesSFML/"
+      - "C:/Users/markp/AppData/Local/Atlassian/SourceTree/git_local/bin/"
+    searched_directories:
+      - "C:/Program Files/CMake/bin/git.cmd.com"
+      - "C:/Program Files/CMake/bin/git.cmd.exe"
+      - "C:/Program Files/CMake/bin/git.cmd"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/git.cmd.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/git.cmd.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/git.cmd"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/git.cmd.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/git.cmd.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/git.cmd"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/git.cmd.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/git.cmd.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/git.cmd"
+      - "C:/Windows/System32/git.cmd.com"
+      - "C:/Windows/System32/git.cmd.exe"
+      - "C:/Windows/System32/git.cmd"
+      - "C:/Windows/git.cmd.com"
+      - "C:/Windows/git.cmd.exe"
+      - "C:/Windows/git.cmd"
+      - "C:/Windows/System32/wbem/git.cmd.com"
+      - "C:/Windows/System32/wbem/git.cmd.exe"
+      - "C:/Windows/System32/wbem/git.cmd"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git.cmd.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git.cmd.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git.cmd"
+      - "C:/Windows/System32/OpenSSH/git.cmd.com"
+      - "C:/Windows/System32/OpenSSH/git.cmd.exe"
+      - "C:/Windows/System32/OpenSSH/git.cmd"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/git.cmd.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/git.cmd.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/git.cmd"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/git.cmd.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/git.cmd.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/git.cmd"
+      - "C:/Program Files/Git/cmd/git.cmd.com"
+      - "C:/Program Files/Git/cmd/git.cmd.exe"
+      - "C:/Program Files/Git/cmd/git.cmd"
+      - "C:/Program Files/Tailscale/git.cmd.com"
+      - "C:/Program Files/Tailscale/git.cmd.exe"
+      - "C:/Program Files/Tailscale/git.cmd"
+      - "C:/Program Files/dotnet/git.cmd.com"
+      - "C:/Program Files/dotnet/git.cmd.exe"
+      - "C:/Program Files/dotnet/git.cmd"
+      - "C:/Program Files/nodejs/git.cmd.com"
+      - "C:/Program Files/nodejs/git.cmd.exe"
+      - "C:/Program Files/nodejs/git.cmd"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/git.cmd.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/git.cmd.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/git.cmd"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/git.cmd.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/git.cmd.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/git.cmd"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/git.cmd.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/git.cmd.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/git.cmd"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/git.cmd.com"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/git.cmd.exe"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/git.cmd"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/git.cmd.com"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/git.cmd.exe"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/git.cmd"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/git.cmd.com"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/git.cmd.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/git.cmd"
+      - "C:/Users/markp/.dotnet/tools/git.cmd.com"
+      - "C:/Users/markp/.dotnet/tools/git.cmd.exe"
+      - "C:/Users/markp/.dotnet/tools/git.cmd"
+      - "C:/Users/markp/AppData/Roaming/npm/git.cmd.com"
+      - "C:/Users/markp/AppData/Roaming/npm/git.cmd.exe"
+      - "C:/Users/markp/AppData/Roaming/npm/git.cmd"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/git.cmd.com"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/git.cmd.exe"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/git.cmd"
+      - "C:/Program Files/bin/git.cmd.com"
+      - "C:/Program Files/bin/git.cmd.exe"
+      - "C:/Program Files/bin/git.cmd"
+      - "C:/Program Files/sbin/git.cmd.com"
+      - "C:/Program Files/sbin/git.cmd.exe"
+      - "C:/Program Files/sbin/git.cmd"
+      - "C:/Program Files/git.cmd.com"
+      - "C:/Program Files/git.cmd.exe"
+      - "C:/Program Files/git.cmd"
+      - "C:/Program Files (x86)/bin/git.cmd.com"
+      - "C:/Program Files (x86)/bin/git.cmd.exe"
+      - "C:/Program Files (x86)/bin/git.cmd"
+      - "C:/Program Files (x86)/sbin/git.cmd.com"
+      - "C:/Program Files (x86)/sbin/git.cmd.exe"
+      - "C:/Program Files (x86)/sbin/git.cmd"
+      - "C:/Program Files (x86)/git.cmd.com"
+      - "C:/Program Files (x86)/git.cmd.exe"
+      - "C:/Program Files (x86)/git.cmd"
+      - "C:/Program Files/CMake/bin/git.cmd.com"
+      - "C:/Program Files/CMake/bin/git.cmd.exe"
+      - "C:/Program Files/CMake/bin/git.cmd"
+      - "C:/Program Files/CMake/sbin/git.cmd.com"
+      - "C:/Program Files/CMake/sbin/git.cmd.exe"
+      - "C:/Program Files/CMake/sbin/git.cmd"
+      - "C:/Program Files/CMake/git.cmd.com"
+      - "C:/Program Files/CMake/git.cmd.exe"
+      - "C:/Program Files/CMake/git.cmd"
+      - "C:/Program Files/BoardGamesSFML/bin/git.cmd.com"
+      - "C:/Program Files/BoardGamesSFML/bin/git.cmd.exe"
+      - "C:/Program Files/BoardGamesSFML/bin/git.cmd"
+      - "C:/Program Files/BoardGamesSFML/sbin/git.cmd.com"
+      - "C:/Program Files/BoardGamesSFML/sbin/git.cmd.exe"
+      - "C:/Program Files/BoardGamesSFML/sbin/git.cmd"
+      - "C:/Program Files/BoardGamesSFML/git.cmd.com"
+      - "C:/Program Files/BoardGamesSFML/git.cmd.exe"
+      - "C:/Program Files/BoardGamesSFML/git.cmd"
+      - "C:/Users/markp/AppData/Local/Atlassian/SourceTree/git_local/bin/git.cmd.com"
+      - "C:/Users/markp/AppData/Local/Atlassian/SourceTree/git_local/bin/git.cmd.exe"
+      - "C:/Users/markp/AppData/Local/Atlassian/SourceTree/git_local/bin/git.cmd"
+      - "C:/Program Files/CMake/bin/git.com"
+      - "C:/Program Files/CMake/bin/git.exe"
+      - "C:/Program Files/CMake/bin/git"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/git.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/git.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/git"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/git.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/git.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/git"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/git.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/git.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/git"
+      - "C:/Windows/System32/git.com"
+      - "C:/Windows/System32/git.exe"
+      - "C:/Windows/System32/git"
+      - "C:/Windows/git.com"
+      - "C:/Windows/git.exe"
+      - "C:/Windows/git"
+      - "C:/Windows/System32/wbem/git.com"
+      - "C:/Windows/System32/wbem/git.exe"
+      - "C:/Windows/System32/wbem/git"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git"
+      - "C:/Windows/System32/OpenSSH/git.com"
+      - "C:/Windows/System32/OpenSSH/git.exe"
+      - "C:/Windows/System32/OpenSSH/git"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/git.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/git.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/git"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/git.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/git.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/git"
+      - "C:/Program Files/Git/cmd/git.com"
+    found: "C:/Program Files/Git/cmd/git.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/BoardGamesSFML"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/BoardGamesSFML"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:501 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:538 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "build/_deps/sfml-src/CMakeLists.txt:38 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/BoardGamesSFML"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/BoardGamesSFML"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "build/_deps/sfml-src/CMakeLists.txt:38 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.51+25f168cee for .NET Framework
+      Build started 23/11/2026 02:31:31.
+      
+      Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\4.4.4\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\4.4.4\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\4.4.4\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.86
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/4.4.4/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:64 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "build/_deps/sfml-src/CMakeLists.txt:38 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/markp/.dotnet/tools/"
+      - "C:/Users/markp/AppData/Roaming/npm/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files/BoardGamesSFML/bin/"
+      - "C:/Program Files/BoardGamesSFML/sbin/"
+      - "C:/Program Files/BoardGamesSFML/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/lld-link.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/lld-link.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/lld-link"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files/Tailscale/lld-link.com"
+      - "C:/Program Files/Tailscale/lld-link.exe"
+      - "C:/Program Files/Tailscale/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/lld-link.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/lld-link"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/lld-link.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/lld-link"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/lld-link.com"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/lld-link"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/lld-link"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "C:/Users/markp/.dotnet/tools/lld-link.com"
+      - "C:/Users/markp/.dotnet/tools/lld-link.exe"
+      - "C:/Users/markp/.dotnet/tools/lld-link"
+      - "C:/Users/markp/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/markp/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/markp/AppData/Roaming/npm/lld-link"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/lld-link.com"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/lld-link.exe"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/lld-link"
+      - "C:/Program Files/bin/lld-link.com"
+      - "C:/Program Files/bin/lld-link.exe"
+      - "C:/Program Files/bin/lld-link"
+      - "C:/Program Files/sbin/lld-link.com"
+      - "C:/Program Files/sbin/lld-link.exe"
+      - "C:/Program Files/sbin/lld-link"
+      - "C:/Program Files/lld-link.com"
+      - "C:/Program Files/lld-link.exe"
+      - "C:/Program Files/lld-link"
+      - "C:/Program Files (x86)/bin/lld-link.com"
+      - "C:/Program Files (x86)/bin/lld-link.exe"
+      - "C:/Program Files (x86)/bin/lld-link"
+      - "C:/Program Files (x86)/sbin/lld-link.com"
+      - "C:/Program Files (x86)/sbin/lld-link.exe"
+      - "C:/Program Files (x86)/sbin/lld-link"
+      - "C:/Program Files (x86)/lld-link.com"
+      - "C:/Program Files (x86)/lld-link.exe"
+      - "C:/Program Files (x86)/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Program Files/CMake/sbin/lld-link.com"
+      - "C:/Program Files/CMake/sbin/lld-link.exe"
+      - "C:/Program Files/CMake/sbin/lld-link"
+      - "C:/Program Files/CMake/lld-link.com"
+      - "C:/Program Files/CMake/lld-link.exe"
+      - "C:/Program Files/CMake/lld-link"
+      - "C:/Program Files/BoardGamesSFML/bin/lld-link.com"
+      - "C:/Program Files/BoardGamesSFML/bin/lld-link.exe"
+      - "C:/Program Files/BoardGamesSFML/bin/lld-link"
+      - "C:/Program Files/BoardGamesSFML/sbin/lld-link.com"
+      - "C:/Program Files/BoardGamesSFML/sbin/lld-link.exe"
+      - "C:/Program Files/BoardGamesSFML/sbin/lld-link"
+      - "C:/Program Files/BoardGamesSFML/lld-link.com"
+      - "C:/Program Files/BoardGamesSFML/lld-link.exe"
+      - "C:/Program Files/BoardGamesSFML/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/BoardGamesSFML"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/BoardGamesSFML"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:123 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "build/_deps/sfml-src/CMakeLists.txt:38 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-vjv4q2"
+      binary: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-vjv4q2"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: false
+      stdout: |
+        Change Dir: 'C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-vjv4q2'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_ab31d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.51+25f168cee for .NET Framework
+        Build started 23/11/2026 02:31:33.
+        
+        Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vjv4q2\\cmTC_ab31d.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vjv4q2\\Debug\\".
+          Creating directory "cmTC_ab31d.dir\\Debug\\cmTC_ab31d.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_ab31d.dir\\Debug\\cmTC_ab31d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_ab31d.dir\\Debug\\cmTC_ab31d.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_ab31d.dir\\Debug\\\\" /Fd"cmTC_ab31d.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35228 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_ab31d.dir\\Debug\\\\" /Fd"cmTC_ab31d.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vjv4q2\\Debug\\cmTC_ab31d.exe" /INCREMENTAL /ILK:"cmTC_ab31d.dir\\Debug\\cmTC_ab31d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-vjv4q2/Debug/cmTC_ab31d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-vjv4q2/Debug/cmTC_ab31d.lib" /MACHINE:X64  /machine:x64 cmTC_ab31d.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_ab31d.vcxproj -> C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vjv4q2\\Debug\\cmTC_ab31d.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_ab31d.dir\\Debug\\cmTC_ab31d.tlog\\unsuccessfulbuild".
+          Touching "cmTC_ab31d.dir\\Debug\\cmTC_ab31d.tlog\\cmTC_ab31d.lastbuildstate".
+        Done Building Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vjv4q2\\cmTC_ab31d.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.92
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:291 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "build/_deps/sfml-src/CMakeLists.txt:38 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        link line: [  C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vjv4q2\\Debug\\cmTC_ab31d.exe" /INCREMENTAL /ILK:"cmTC_ab31d.dir\\Debug\\cmTC_ab31d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-vjv4q2/Debug/cmTC_ab31d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-vjv4q2/Debug/cmTC_ab31d.lib" /MACHINE:X64  /machine:x64 cmTC_ab31d.dir\\Debug\\CMakeCCompilerABI.obj] ==> linker [C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe]
+        linker tool for 'C': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe 
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/Internal/CMakeDetermineLinkerId.cmake:41 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:337 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "build/_deps/sfml-src/CMakeLists.txt:38 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35228.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CheckIncludeFile.cmake:157 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CheckTypeSize.cmake:457 (check_include_file)"
+      - "build/_deps/sfml-src/cmake/Config.cmake:10 (check_type_size)"
+      - "build/_deps/sfml-src/CMakeLists.txt:41 (include)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-a926ym"
+      binary: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-a926ym"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-a926ym'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b60b7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.51+25f168cee for .NET Framework
+        Build started 23/11/2026 02:31:36.
+        
+        Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a926ym\\cmTC_b60b7.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a926ym\\Debug\\".
+          Creating directory "cmTC_b60b7.dir\\Debug\\cmTC_b60b7.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_b60b7.dir\\Debug\\cmTC_b60b7.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_b60b7.dir\\Debug\\cmTC_b60b7.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_b60b7.dir\\Debug\\\\" /Fd"cmTC_b60b7.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a926ym\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35228 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_b60b7.dir\\Debug\\\\" /Fd"cmTC_b60b7.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a926ym\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a926ym\\Debug\\cmTC_b60b7.exe" /INCREMENTAL /ILK:"cmTC_b60b7.dir\\Debug\\cmTC_b60b7.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-a926ym/Debug/cmTC_b60b7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-a926ym/Debug/cmTC_b60b7.lib" /MACHINE:X64  /machine:x64 cmTC_b60b7.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_b60b7.vcxproj -> C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a926ym\\Debug\\cmTC_b60b7.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_b60b7.dir\\Debug\\cmTC_b60b7.tlog\\unsuccessfulbuild".
+          Touching "cmTC_b60b7.dir\\Debug\\cmTC_b60b7.tlog\\cmTC_b60b7.lastbuildstate".
+        Done Building Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a926ym\\cmTC_b60b7.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:04.76
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CheckIncludeFile.cmake:157 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CheckTypeSize.cmake:458 (check_include_file)"
+      - "build/_deps/sfml-src/cmake/Config.cmake:10 (check_type_size)"
+      - "build/_deps/sfml-src/CMakeLists.txt:41 (include)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-e6aydn"
+      binary: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-e6aydn"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-e6aydn'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8fbc4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.51+25f168cee for .NET Framework
+        Build started 23/11/2026 02:31:42.
+        
+        Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e6aydn\\cmTC_8fbc4.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e6aydn\\Debug\\".
+          Creating directory "cmTC_8fbc4.dir\\Debug\\cmTC_8fbc4.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_8fbc4.dir\\Debug\\cmTC_8fbc4.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_8fbc4.dir\\Debug\\cmTC_8fbc4.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_8fbc4.dir\\Debug\\\\" /Fd"cmTC_8fbc4.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e6aydn\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35228 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_8fbc4.dir\\Debug\\\\" /Fd"cmTC_8fbc4.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e6aydn\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e6aydn\\Debug\\cmTC_8fbc4.exe" /INCREMENTAL /ILK:"cmTC_8fbc4.dir\\Debug\\cmTC_8fbc4.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-e6aydn/Debug/cmTC_8fbc4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-e6aydn/Debug/cmTC_8fbc4.lib" /MACHINE:X64  /machine:x64 cmTC_8fbc4.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_8fbc4.vcxproj -> C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e6aydn\\Debug\\cmTC_8fbc4.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_8fbc4.dir\\Debug\\cmTC_8fbc4.tlog\\unsuccessfulbuild".
+          Touching "cmTC_8fbc4.dir\\Debug\\cmTC_8fbc4.tlog\\cmTC_8fbc4.lastbuildstate".
+        Done Building Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e6aydn\\cmTC_8fbc4.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:01.34
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CheckIncludeFile.cmake:157 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CheckTypeSize.cmake:459 (check_include_file)"
+      - "build/_deps/sfml-src/cmake/Config.cmake:10 (check_type_size)"
+      - "build/_deps/sfml-src/CMakeLists.txt:41 (include)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-n6ay94"
+      binary: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-n6ay94"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-n6ay94'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_120bb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.51+25f168cee for .NET Framework
+        Build started 23/11/2026 02:31:43.
+        
+        Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n6ay94\\cmTC_120bb.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n6ay94\\Debug\\".
+          Creating directory "cmTC_120bb.dir\\Debug\\cmTC_120bb.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_120bb.dir\\Debug\\cmTC_120bb.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_120bb.dir\\Debug\\cmTC_120bb.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_120bb.dir\\Debug\\\\" /Fd"cmTC_120bb.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n6ay94\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35228 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_120bb.dir\\Debug\\\\" /Fd"cmTC_120bb.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n6ay94\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n6ay94\\Debug\\cmTC_120bb.exe" /INCREMENTAL /ILK:"cmTC_120bb.dir\\Debug\\cmTC_120bb.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-n6ay94/Debug/cmTC_120bb.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-n6ay94/Debug/cmTC_120bb.lib" /MACHINE:X64  /machine:x64 cmTC_120bb.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_120bb.vcxproj -> C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n6ay94\\Debug\\cmTC_120bb.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_120bb.dir\\Debug\\cmTC_120bb.tlog\\unsuccessfulbuild".
+          Touching "cmTC_120bb.dir\\Debug\\cmTC_120bb.tlog\\cmTC_120bb.lastbuildstate".
+        Done Building Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n6ay94\\cmTC_120bb.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.94
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CheckTypeSize.cmake:344 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CheckTypeSize.cmake:476 (__check_type_size_impl)"
+      - "build/_deps/sfml-src/cmake/Config.cmake:10 (check_type_size)"
+      - "build/_deps/sfml-src/CMakeLists.txt:41 (include)"
+    checks:
+      - "Check size of void*"
+    directories:
+      source: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-0px9qm"
+      binary: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-0px9qm"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "HAVE_SIZEOF_VOID_PTR"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-0px9qm'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6e222.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.51+25f168cee for .NET Framework
+        Build started 23/11/2026 02:31:45.
+        
+        Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0px9qm\\cmTC_6e222.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0px9qm\\Debug\\".
+          Creating directory "cmTC_6e222.dir\\Debug\\cmTC_6e222.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_6e222.dir\\Debug\\cmTC_6e222.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_6e222.dir\\Debug\\cmTC_6e222.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_6e222.dir\\Debug\\\\" /Fd"cmTC_6e222.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0px9qm\\SIZEOF_VOID_PTR.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35228 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_6e222.dir\\Debug\\\\" /Fd"cmTC_6e222.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0px9qm\\SIZEOF_VOID_PTR.c"
+          SIZEOF_VOID_PTR.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0px9qm\\Debug\\cmTC_6e222.exe" /INCREMENTAL /ILK:"cmTC_6e222.dir\\Debug\\cmTC_6e222.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-0px9qm/Debug/cmTC_6e222.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/markp/Documents/BoardGames/Cpp_code/build/CMakeFiles/CMakeScratch/TryCompile-0px9qm/Debug/cmTC_6e222.lib" /MACHINE:X64  /machine:x64 cmTC_6e222.dir\\Debug\\SIZEOF_VOID_PTR.obj
+          cmTC_6e222.vcxproj -> C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0px9qm\\Debug\\cmTC_6e222.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_6e222.dir\\Debug\\cmTC_6e222.tlog\\unsuccessfulbuild".
+          Touching "cmTC_6e222.dir\\Debug\\cmTC_6e222.tlog\\cmTC_6e222.lastbuildstate".
+        Done Building Project "C:\\Users\\markp\\Documents\\BoardGames\\Cpp_code\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0px9qm\\cmTC_6e222.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:01.02
+        
+      exitCode: 0
+  -
+    kind: "find-v1"
+    backtrace:
+      - "build/_deps/sfml-src/cmake/Modules/FindFreetype.cmake:54 (find_path)"
+      - "build/_deps/sfml-src/cmake/Macros.cmake:386 (find_package)"
+      - "build/_deps/sfml-src/src/SFML/Graphics/CMakeLists.txt:126 (sfml_find_package)"
+    mode: "path"
+    variable: "FREETYPE_INCLUDE_DIR_ft2build"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ft2build.h"
+    candidate_directories:
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/include/freetype2/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/include/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/include/freetype2/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/include/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/freetype2/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/"
+      - "C:/Program Files/CMake/bin/include/freetype2/"
+      - "C:/Program Files/CMake/bin/include/"
+      - "C:/Program Files/CMake/bin/freetype2/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/include/freetype2/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/include/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/freetype2/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/include/freetype2/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/include/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/freetype2/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/include/freetype2/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/include/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/freetype2/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/include/freetype2/"
+      - "C:/Windows/System32/include/"
+      - "C:/Windows/System32/freetype2/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/include/freetype2/"
+      - "C:/Windows/include/"
+      - "C:/Windows/freetype2/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/include/freetype2/"
+      - "C:/Windows/System32/wbem/include/"
+      - "C:/Windows/System32/wbem/freetype2/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/include/freetype2/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/include/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/freetype2/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/include/freetype2/"
+      - "C:/Windows/System32/OpenSSH/include/"
+      - "C:/Windows/System32/OpenSSH/freetype2/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/include/freetype2/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/include/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/freetype2/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/include/freetype2/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/include/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/freetype2/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/include/freetype2/"
+      - "C:/Program Files/Git/cmd/include/"
+      - "C:/Program Files/Git/cmd/freetype2/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Tailscale/include/freetype2/"
+      - "C:/Program Files/Tailscale/include/"
+      - "C:/Program Files/Tailscale/freetype2/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/dotnet/include/freetype2/"
+      - "C:/Program Files/dotnet/include/"
+      - "C:/Program Files/dotnet/freetype2/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/include/freetype2/"
+      - "C:/Program Files/nodejs/include/"
+      - "C:/Program Files/nodejs/freetype2/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/include/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/include/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/include/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/include/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/freetype2/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/include/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/freetype2/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/include/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/markp/.dotnet/tools/include/freetype2/"
+      - "C:/Users/markp/.dotnet/tools/include/"
+      - "C:/Users/markp/.dotnet/tools/freetype2/"
+      - "C:/Users/markp/.dotnet/tools/"
+      - "C:/Users/markp/AppData/Roaming/npm/include/freetype2/"
+      - "C:/Users/markp/AppData/Roaming/npm/include/"
+      - "C:/Users/markp/AppData/Roaming/npm/freetype2/"
+      - "C:/Users/markp/AppData/Roaming/npm/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/include/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/freetype2/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/"
+      - "C:/Program Files/include/include/freetype2/"
+      - "C:/Program Files/include/include/"
+      - "C:/Program Files/include/freetype2/"
+      - "C:/Program Files/include/"
+      - "C:/Program Files/include/freetype2/"
+      - "C:/Program Files/include/"
+      - "C:/Program Files/freetype2/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/include/include/freetype2/"
+      - "C:/Program Files (x86)/include/include/"
+      - "C:/Program Files (x86)/include/freetype2/"
+      - "C:/Program Files (x86)/include/"
+      - "C:/Program Files (x86)/include/freetype2/"
+      - "C:/Program Files (x86)/include/"
+      - "C:/Program Files (x86)/freetype2/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/include/include/freetype2/"
+      - "C:/Program Files/CMake/include/include/"
+      - "C:/Program Files/CMake/include/freetype2/"
+      - "C:/Program Files/CMake/include/"
+      - "C:/Program Files/CMake/include/freetype2/"
+      - "C:/Program Files/CMake/include/"
+      - "C:/Program Files/CMake/freetype2/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files/BoardGamesSFML/include/include/freetype2/"
+      - "C:/Program Files/BoardGamesSFML/include/include/"
+      - "C:/Program Files/BoardGamesSFML/include/freetype2/"
+      - "C:/Program Files/BoardGamesSFML/include/"
+      - "C:/Program Files/BoardGamesSFML/include/freetype2/"
+      - "C:/Program Files/BoardGamesSFML/include/"
+      - "C:/Program Files/BoardGamesSFML/freetype2/"
+      - "C:/Program Files/BoardGamesSFML/"
+      - "/usr/X11R6/include/freetype2/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/freetype2/"
+      - "/usr/X11R6/"
+      - "/usr/local/X11R6/include/freetype2/"
+      - "/usr/local/X11R6/include/"
+      - "/usr/local/X11R6/freetype2/"
+      - "/usr/local/X11R6/"
+      - "/usr/local/X11/include/freetype2/"
+      - "/usr/local/X11/include/"
+      - "/usr/local/X11/freetype2/"
+      - "/usr/local/X11/"
+      - "/usr/freeware/include/freetype2/"
+      - "/usr/freeware/include/"
+      - "/usr/freeware/freetype2/"
+      - "/usr/freeware/"
+      - "/REGISTRY-NOTFOUND/include/freetype2/"
+      - "/REGISTRY-NOTFOUND/include/"
+      - "/REGISTRY-NOTFOUND/freetype2/"
+      - "/REGISTRY-NOTFOUND/"
+    searched_directories:
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/include/freetype2/ft2build.h"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/include/ft2build.h"
+    found: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/"
+    search_context:
+      CMAKE_INCLUDE_PATH:
+        - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers"
+        - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2"
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/BoardGamesSFML"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/BoardGamesSFML"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "build/_deps/sfml-src/cmake/Modules/FindFreetype.cmake:73 (find_path)"
+      - "build/_deps/sfml-src/cmake/Macros.cmake:386 (find_package)"
+      - "build/_deps/sfml-src/src/SFML/Graphics/CMakeLists.txt:126 (sfml_find_package)"
+    mode: "path"
+    variable: "FREETYPE_INCLUDE_DIR_freetype2"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "freetype/config/ftheader.h"
+      - "config/ftheader.h"
+    candidate_directories:
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/include/freetype2/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/include/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/include/freetype2/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/include/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/freetype2/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/"
+      - "C:/Program Files/CMake/bin/include/freetype2/"
+      - "C:/Program Files/CMake/bin/include/"
+      - "C:/Program Files/CMake/bin/freetype2/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/include/freetype2/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/include/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/freetype2/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/include/freetype2/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/include/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/freetype2/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/include/freetype2/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/include/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/freetype2/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/include/freetype2/"
+      - "C:/Windows/System32/include/"
+      - "C:/Windows/System32/freetype2/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/include/freetype2/"
+      - "C:/Windows/include/"
+      - "C:/Windows/freetype2/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/include/freetype2/"
+      - "C:/Windows/System32/wbem/include/"
+      - "C:/Windows/System32/wbem/freetype2/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/include/freetype2/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/include/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/freetype2/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/include/freetype2/"
+      - "C:/Windows/System32/OpenSSH/include/"
+      - "C:/Windows/System32/OpenSSH/freetype2/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/include/freetype2/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/include/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/freetype2/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/include/freetype2/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/include/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/freetype2/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/include/freetype2/"
+      - "C:/Program Files/Git/cmd/include/"
+      - "C:/Program Files/Git/cmd/freetype2/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Tailscale/include/freetype2/"
+      - "C:/Program Files/Tailscale/include/"
+      - "C:/Program Files/Tailscale/freetype2/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/dotnet/include/freetype2/"
+      - "C:/Program Files/dotnet/include/"
+      - "C:/Program Files/dotnet/freetype2/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/include/freetype2/"
+      - "C:/Program Files/nodejs/include/"
+      - "C:/Program Files/nodejs/freetype2/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/include/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/include/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/include/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/include/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/freetype2/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/include/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/freetype2/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/include/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/freetype2/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/markp/.dotnet/tools/include/freetype2/"
+      - "C:/Users/markp/.dotnet/tools/include/"
+      - "C:/Users/markp/.dotnet/tools/freetype2/"
+      - "C:/Users/markp/.dotnet/tools/"
+      - "C:/Users/markp/AppData/Roaming/npm/include/freetype2/"
+      - "C:/Users/markp/AppData/Roaming/npm/include/"
+      - "C:/Users/markp/AppData/Roaming/npm/freetype2/"
+      - "C:/Users/markp/AppData/Roaming/npm/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/include/freetype2/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/include/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/freetype2/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/"
+      - "C:/Program Files/include/include/freetype2/"
+      - "C:/Program Files/include/include/"
+      - "C:/Program Files/include/freetype2/"
+      - "C:/Program Files/include/"
+      - "C:/Program Files/include/freetype2/"
+      - "C:/Program Files/include/"
+      - "C:/Program Files/freetype2/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/include/include/freetype2/"
+      - "C:/Program Files (x86)/include/include/"
+      - "C:/Program Files (x86)/include/freetype2/"
+      - "C:/Program Files (x86)/include/"
+      - "C:/Program Files (x86)/include/freetype2/"
+      - "C:/Program Files (x86)/include/"
+      - "C:/Program Files (x86)/freetype2/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/include/include/freetype2/"
+      - "C:/Program Files/CMake/include/include/"
+      - "C:/Program Files/CMake/include/freetype2/"
+      - "C:/Program Files/CMake/include/"
+      - "C:/Program Files/CMake/include/freetype2/"
+      - "C:/Program Files/CMake/include/"
+      - "C:/Program Files/CMake/freetype2/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files/BoardGamesSFML/include/include/freetype2/"
+      - "C:/Program Files/BoardGamesSFML/include/include/"
+      - "C:/Program Files/BoardGamesSFML/include/freetype2/"
+      - "C:/Program Files/BoardGamesSFML/include/"
+      - "C:/Program Files/BoardGamesSFML/include/freetype2/"
+      - "C:/Program Files/BoardGamesSFML/include/"
+      - "C:/Program Files/BoardGamesSFML/freetype2/"
+      - "C:/Program Files/BoardGamesSFML/"
+      - "/usr/X11R6/include/freetype2/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/freetype2/"
+      - "/usr/X11R6/"
+      - "/usr/local/X11R6/include/freetype2/"
+      - "/usr/local/X11R6/include/"
+      - "/usr/local/X11R6/freetype2/"
+      - "/usr/local/X11R6/"
+      - "/usr/local/X11/include/freetype2/"
+      - "/usr/local/X11/include/"
+      - "/usr/local/X11/freetype2/"
+      - "/usr/local/X11/"
+      - "/usr/freeware/include/freetype2/"
+      - "/usr/freeware/include/"
+      - "/usr/freeware/freetype2/"
+      - "/usr/freeware/"
+      - "/REGISTRY-NOTFOUND/include/freetype2/"
+      - "/REGISTRY-NOTFOUND/include/"
+      - "/REGISTRY-NOTFOUND/freetype2/"
+      - "/REGISTRY-NOTFOUND/"
+    searched_directories:
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/include/freetype/config/ftheader.h"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype/config/ftheader.h"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/include/freetype/config/ftheader.h"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/CMake/bin/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/CMake/bin/include/freetype/config/ftheader.h"
+      - "C:/Program Files/CMake/bin/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/CMake/bin/freetype/config/ftheader.h"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/include/freetype/config/ftheader.h"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/include/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/include/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/freetype/config/ftheader.h"
+      - "C:/Windows/System32/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Windows/System32/include/freetype/config/ftheader.h"
+      - "C:/Windows/System32/freetype2/freetype/config/ftheader.h"
+      - "C:/Windows/System32/freetype/config/ftheader.h"
+      - "C:/Windows/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Windows/include/freetype/config/ftheader.h"
+      - "C:/Windows/freetype2/freetype/config/ftheader.h"
+      - "C:/Windows/freetype/config/ftheader.h"
+      - "C:/Windows/System32/wbem/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Windows/System32/wbem/include/freetype/config/ftheader.h"
+      - "C:/Windows/System32/wbem/freetype2/freetype/config/ftheader.h"
+      - "C:/Windows/System32/wbem/freetype/config/ftheader.h"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/include/freetype/config/ftheader.h"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/freetype2/freetype/config/ftheader.h"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/freetype/config/ftheader.h"
+      - "C:/Windows/System32/OpenSSH/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Windows/System32/OpenSSH/include/freetype/config/ftheader.h"
+      - "C:/Windows/System32/OpenSSH/freetype2/freetype/config/ftheader.h"
+      - "C:/Windows/System32/OpenSSH/freetype/config/ftheader.h"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/include/freetype/config/ftheader.h"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/include/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/freetype/config/ftheader.h"
+      - "C:/Program Files/Git/cmd/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/Git/cmd/include/freetype/config/ftheader.h"
+      - "C:/Program Files/Git/cmd/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/Git/cmd/freetype/config/ftheader.h"
+      - "C:/Program Files/Tailscale/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/Tailscale/include/freetype/config/ftheader.h"
+      - "C:/Program Files/Tailscale/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/Tailscale/freetype/config/ftheader.h"
+      - "C:/Program Files/dotnet/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/dotnet/include/freetype/config/ftheader.h"
+      - "C:/Program Files/dotnet/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/dotnet/freetype/config/ftheader.h"
+      - "C:/Program Files/nodejs/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/nodejs/include/freetype/config/ftheader.h"
+      - "C:/Program Files/nodejs/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/nodejs/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/include/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/include/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/include/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/include/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/include/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/include/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/freetype/config/ftheader.h"
+      - "C:/Users/markp/.dotnet/tools/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/.dotnet/tools/include/freetype/config/ftheader.h"
+      - "C:/Users/markp/.dotnet/tools/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/.dotnet/tools/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Roaming/npm/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Roaming/npm/include/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Roaming/npm/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Roaming/npm/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/include/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/freetype2/freetype/config/ftheader.h"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/freetype/config/ftheader.h"
+      - "C:/Program Files/include/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/include/include/freetype/config/ftheader.h"
+      - "C:/Program Files/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/include/freetype/config/ftheader.h"
+      - "C:/Program Files/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/include/freetype/config/ftheader.h"
+      - "C:/Program Files/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/include/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/include/include/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/include/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/include/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files (x86)/freetype/config/ftheader.h"
+      - "C:/Program Files/CMake/include/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/CMake/include/include/freetype/config/ftheader.h"
+      - "C:/Program Files/CMake/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/CMake/include/freetype/config/ftheader.h"
+      - "C:/Program Files/CMake/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/CMake/include/freetype/config/ftheader.h"
+      - "C:/Program Files/CMake/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/CMake/freetype/config/ftheader.h"
+      - "C:/Program Files/BoardGamesSFML/include/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/BoardGamesSFML/include/include/freetype/config/ftheader.h"
+      - "C:/Program Files/BoardGamesSFML/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/BoardGamesSFML/include/freetype/config/ftheader.h"
+      - "C:/Program Files/BoardGamesSFML/include/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/BoardGamesSFML/include/freetype/config/ftheader.h"
+      - "C:/Program Files/BoardGamesSFML/freetype2/freetype/config/ftheader.h"
+      - "C:/Program Files/BoardGamesSFML/freetype/config/ftheader.h"
+      - "/usr/X11R6/include/freetype2/freetype/config/ftheader.h"
+      - "/usr/X11R6/include/freetype/config/ftheader.h"
+      - "/usr/X11R6/freetype2/freetype/config/ftheader.h"
+      - "/usr/X11R6/freetype/config/ftheader.h"
+      - "/usr/local/X11R6/include/freetype2/freetype/config/ftheader.h"
+      - "/usr/local/X11R6/include/freetype/config/ftheader.h"
+      - "/usr/local/X11R6/freetype2/freetype/config/ftheader.h"
+      - "/usr/local/X11R6/freetype/config/ftheader.h"
+      - "/usr/local/X11/include/freetype2/freetype/config/ftheader.h"
+      - "/usr/local/X11/include/freetype/config/ftheader.h"
+      - "/usr/local/X11/freetype2/freetype/config/ftheader.h"
+      - "/usr/local/X11/freetype/config/ftheader.h"
+      - "/usr/freeware/include/freetype2/freetype/config/ftheader.h"
+      - "/usr/freeware/include/freetype/config/ftheader.h"
+      - "/usr/freeware/freetype2/freetype/config/ftheader.h"
+      - "/usr/freeware/freetype/config/ftheader.h"
+      - "/REGISTRY-NOTFOUND/include/freetype2/freetype/config/ftheader.h"
+      - "/REGISTRY-NOTFOUND/include/freetype/config/ftheader.h"
+      - "/REGISTRY-NOTFOUND/freetype2/freetype/config/ftheader.h"
+      - "/REGISTRY-NOTFOUND/freetype/config/ftheader.h"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/include/freetype2/config/ftheader.h"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/include/config/ftheader.h"
+    found: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2/"
+    search_context:
+      CMAKE_INCLUDE_PATH:
+        - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers"
+        - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/headers/freetype2"
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/BoardGamesSFML"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/BoardGamesSFML"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "build/_deps/sfml-src/cmake/Modules/FindFreetype.cmake:94 (find_library)"
+      - "build/_deps/sfml-src/cmake/Macros.cmake:386 (find_package)"
+      - "build/_deps/sfml-src/src/SFML/Graphics/CMakeLists.txt:126 (sfml_find_package)"
+    mode: "library"
+    variable: "FREETYPE_LIBRARY"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "freetype"
+      - "libfreetype"
+      - "freetype219"
+    candidate_directories:
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/libs-msvc-universal/x64/lib/"
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/libs-msvc-universal/x64/"
+      - "C:/Program Files/CMake/bin/lib/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lib/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/lib/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lib/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/lib/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/lib/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/lib/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lib/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/lib/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lib/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lib/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/lib/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Tailscale/lib/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/dotnet/lib/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/nodejs/lib/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/lib/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/lib/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/lib/"
+      - "C:/Users/markp/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/lib/"
+      - "C:/Users/markp/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/lib/"
+      - "C:/Users/markp/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/lib/"
+      - "C:/Users/markp/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/markp/.dotnet/tools/lib/"
+      - "C:/Users/markp/.dotnet/tools/"
+      - "C:/Users/markp/AppData/Roaming/npm/lib/"
+      - "C:/Users/markp/AppData/Roaming/npm/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/lib/"
+      - "C:/Users/markp/AppData/Local/JetBrains/CLion2026.3/acp-agents/junie/4100.11.0/junie/app/"
+      - "C:/Program Files/lib/lib/"
+      - "C:/Program Files/lib/"
+      - "C:/Program Files/lib/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/lib/lib/"
+      - "C:/Program Files (x86)/lib/"
+      - "C:/Program Files (x86)/lib/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/lib/lib/"
+      - "C:/Program Files/CMake/lib/"
+      - "C:/Program Files/CMake/lib/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files/BoardGamesSFML/lib/lib/"
+      - "C:/Program Files/BoardGamesSFML/lib/"
+      - "C:/Program Files/BoardGamesSFML/lib/"
+      - "C:/Program Files/BoardGamesSFML/"
+      - "C:/Program Files/BoardGamesSFML/bin/lib/"
+      - "C:/Program Files/BoardGamesSFML/bin/"
+      - "/bin/lib/"
+      - "/bin/"
+      - "/usr/X11R6/lib/"
+      - "/usr/X11R6/"
+      - "/usr/local/X11R6/lib/"
+      - "/usr/local/X11R6/"
+      - "/usr/local/X11/lib/"
+      - "/usr/local/X11/"
+      - "/usr/freeware/lib/"
+      - "/usr/freeware/"
+      - "/REGISTRY-NOTFOUND/lib/"
+      - "/REGISTRY-NOTFOUND/"
+    searched_directories:
+      - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/libs-msvc-universal/x64/lib/"
+    found: "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/libs-msvc-universal/x64/freetype.lib"
+    search_context:
+      CMAKE_LIBRARY_PATH:
+        - "C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/extlibs/libs-msvc-universal/x64"
+      ENV{PATH}:
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\markp\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\markp\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\markp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\markp\\.dotnet\\tools"
+        - "C:\\Users\\markp\\AppData\\Roaming\\npm"
+        - "C:\\Users\\markp\\AppData\\Local\\JetBrains\\CLion2026.3\\acp-agents\\junie\\4100.11.0\\junie\\app"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/BoardGamesSFML"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/BoardGamesSFML"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "C:/Program Files/BoardGamesSFML/bin"
+        - "C:/Program Files/CMake/bin"
+        - "/bin"
+...

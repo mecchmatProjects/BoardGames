@@ -164,7 +164,7 @@ public:
     // Kill the background worker and the engine process if running.
     void cancel();
 
-    const std::string& exePath() const { return exePath; }
+    const std::string& enginePath() const { return exePath; }
     void setExePath(const std::string& path); // cancels any active search
 
 private:

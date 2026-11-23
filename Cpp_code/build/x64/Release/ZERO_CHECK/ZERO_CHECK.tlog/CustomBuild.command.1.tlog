@@ -1,0 +1,10 @@
+^C:\USERS\MARKP\DOCUMENTS\BOARDGAMES\CPP_CODE\BUILD\CMAKEFILES\C428408A532BB1465ED8FE01C1F014BB\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/markp/Documents/BoardGames/Cpp_code -BC:/Users/markp/Documents/BoardGames/Cpp_code/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/markp/Documents/BoardGames/Cpp_code/build/BoardGamesSFML.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

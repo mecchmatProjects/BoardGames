@@ -5,6 +5,8 @@
 #include <cstdint>
 #include <sstream>
 #include <cstdlib>
+#include <filesystem>
+#include <initializer_list>
 
 #ifndef _WIN32
 #include <sys/wait.h>
@@ -407,33 +409,39 @@ StockfishEngine::~StockfishEngine() {
     shutdown();
 }
 
-bool StockfishEngine::spawnProcess(const std::string&) {
+bool StockfishEngine::spawnProcess(const std::string&) { // replay happens via stdin commands
 #ifdef _WIN32
-    HANDLE hReadChildStdin = nullptr, hWriteParentStdin = nullptr;
-    HANDLE hReadParentStdout = nullptr, hWriteChildStdout = nullptr;
-    if (!CreatePipe(&hReadChildStdin, &hWriteParentStdin, nullptr, 0)) return false;
-    if (!CreatePipe(&hReadParentStdout, &hWriteChildStdout, nullptr, 0)) {
-        CloseHandle(hReadChildStdin); CloseHandle(hWriteParentStdin);
+    HANDLE hInRead = nullptr, hInWrite = nullptr;   // stdin pipe: parent writes, child reads
+    HANDLE hOutRead = nullptr, hOutWrite = nullptr; // stdout pipe: child writes, parent reads
+    if (!CreatePipe(&hInRead, &hInWrite, nullptr, 0)) return false;
+    if (!CreatePipe(&hOutRead, &hOutWrite, nullptr, 0)) {
+        CloseHandle(hInRead); CloseHandle(hInWrite);
         return false;
     }
+
+    STARTUPINFOA si{};
+    si.cb = static_cast<DWORD>(sizeof(STARTUPINFOA));
+    si.dwFlags = STARTF_USESTDHANDLES;
+    si.hStdInput = hInRead;   // the engine reads its commands here
+    si.hStdOutput = hOutWrite;   // engine UCI output lands in our pipe
+    si.hStdError = hOutWrite; // engine messages share the same pipe
 
     PROCESS_INFORMATION pi{};
-    if (!CreateProcessA(nullptr, const_cast<char*>(exePath.data()), nullptr,
-                        hReadChildStdin, nullptr, hWriteChildStdout,
-                        nullptr, nullptr, nullptr, &pi)) {
-        CloseHandle(hReadChildStdin);
-        CloseHandle(hWriteParentStdin);
-        CloseHandle(hReadParentStdout);
-        CloseHandle(hWriteChildStdout);
+    // lpApplicationName receives the path verbatim, so a path containing
+    // a space (e.g. ".\stockfish windows\...") parses correctly.
+    const BOOL started = CreateProcessA(exePath.c_str(), nullptr, nullptr, nullptr,
+                                        1, 0, nullptr, nullptr, &si, &pi);
+    if (!started) {
+        CloseHandle(hInRead); CloseHandle(hInWrite);
+        CloseHandle(hOutRead); CloseHandle(hOutWrite);
         return false;
     }
-    CloseHandle(hReadChildStdin); // child's end is owned by the process
-    CloseHandle(hWriteChildStdout);
+    CloseHandle(pi.hThread); // not suspended: the search is already running
+    CloseHandle(hInRead); // the child owns its copy; release the parent's
 
     processHandle = pi.hProcess;
-    threadHandle = pi.hThread;
-    stdinWrite = hWriteParentStdin;
-    stdoutRead = hReadParentStdout;
+    stdinWrite = hInWrite;
+    stdoutRead = hOutRead;
     return true;
 #else
     int inPipe[2], outPipe[2];
@@ -447,13 +455,12 @@ bool StockfishEngine::spawnProcess(const std::string&) {
         return false;
     }
     if (pid == 0) {
-        // Child: read stdin comes from parent, write stdout goes to parent.
+        // Child: stdin read comes from parent, write stdout goes to parent.
         dup2(inPipe[0], 0);
         dup2(outPipe[1], 1);
-        const std::string& engine = exePath; // execvp searches PATH when there is no '/'
-        char* exe = const_cast<char*>(engine.c_str());
-        char* args[] = { exe, nullptr };
-        execvp(exe, args);
+        // execvp searches PATH when the path contains no '/'.
+        char* noArgs[] = { nullptr };
+        execvp(exePath.c_str(), noArgs);
         _exit(127); // only reached when exec failed
     }
 
@@ -474,8 +481,17 @@ void StockfishEngine::requestMove(const std::string& positionArg, int movetimeMs
         return;
     }
     std::string pos = positionArg.empty() ? std::string("position startpos") : positionArg;
+#ifdef _WIN32
+    std::error_code ec;
+    if (!std::filesystem::exists(exePath, ec)) {
+        error = "Stockfish binary not found: '" + exePath + "'. Press 'F' to set its path.";
+        status.store(EngineStatus::Error);
+        bestMove.clear();
+        return;
+    }
+#endif
     if (!spawnProcess(pos)) {
-        error = "Failed to start engine process.";
+        error = "Failed to start engine process: '" + exePath + "'. Press 'F' to set its path.";
         status.store(EngineStatus::Error);
         bestMove.clear();
         return;
@@ -528,43 +544,62 @@ void StockfishEngine::shutdown() {
 #endif
 }
 
-void StockfishEngine::runWorker(std::string positionArg, int movetimeMs) {
+void StockfishEngine::runWorker(const std::string& positionArg, int movetimeMs) {
 #ifdef _WIN32
-    HANDLE in = stdinWrite;
-    HANDLE out = stdoutRead;
-
     const std::string cmd = "ucinewgame\n" + positionArg + "\ngo movetime " + std::to_string(movetimeMs) + "\nquit\n";
-    if (in != nullptr) {
-        WriteProcessPipe(in, WRITE_PIPE_SILENCE_FAILURES, const_cast<char*>(cmd.data()), static_cast<DWORD>(cmd.size()));
-        CloseHandle(in);
-        stdinWrite = nullptr;
+    HANDLE out = stdoutRead; // captured once; cancel() may close and clear it later
+
+    {
+        std::lock_guard lock(mutex);
+        if (stdinWrite != nullptr) {
+            DWORD written = 0;
+            WriteFile(static_cast<HANDLE>(stdinWrite), cmd.data(), static_cast<DWORD>(cmd.size()), &written, nullptr);
+            CloseHandle(stdinWrite); // engine saw EOF/quit; safe to release
+            stdinWrite = nullptr;
+        }
     }
 
     std::string line, best;
     bool gotBest = false;
-    char ch;
-    while (out != nullptr && ReadProcessPipe(out, &ch, 1) == 1) {
-        if (ch == '\n') {
-            if (line.rfind("bestmove ", 0) == 0) {
-                std::istringstream ss(line); std::string kw, mv;
-                ss >> kw >> mv;
-                if (!mv.empty()) best = mv; // may be "(none)"
-                gotBest = !best.empty();
+    bool sawNone = false;
+    if (out != nullptr) {
+        char ch;
+        while (true) {
+            DWORD got = 0;
+            if (!ReadFile(static_cast<HANDLE>(out), &ch, 1, &got, nullptr) || got != 1) break;
+            if (ch == '\n') {
+                if (line.rfind("bestmove ", 0) == 0) {
+                    std::istringstream ss(line);
+                    std::string kw, mv;
+                    ss >> kw >> mv;
+                    if (!mv.empty()) {
+                        if (mv == "(none)") sawNone = true;
+                        else best = mv;
+                    }
+                    gotBest = !best.empty() || sawNone;
                 break;
+                }
+                line.clear();
+            } else if (ch != '\r') {
+                if (line.size() < 4096) line.push_back(ch);
             }
-            line.clear();
-        } else if (ch != '\r') {
-            line.push_back(ch);
         }
-        if (line.size() > 4096) line.clear();
     }
-    if (out != nullptr) { CloseHandle(out); stdoutRead = nullptr; }
+    if (out != nullptr) CloseHandle(out);
+    {
+        std::lock_guard lock(mutex);
+        stdoutRead = nullptr;
+    }
 
     {
         std::lock_guard lock(mutex);
         if (status.load() != EngineStatus::Thinking) return; // cancelled meanwhile
-        if (gotBest && best != "(none)") {
-            bestMove = best; status.store(EngineStatus::Done);
+        if (gotBest && !best.empty()) {
+            bestMove = best;
+            status.store(EngineStatus::Done);
+        } else if (sawNone) {
+            status.store(EngineStatus::Error);
+            error = "Engine has no move; position should be finished.";
         } else {
             status.store(EngineStatus::Error);
             error = "Stockfish did not return a move.";
@@ -573,6 +608,7 @@ void StockfishEngine::runWorker(std::string positionArg, int movetimeMs) {
 #else
     const int inFd = (stdinWrite != nullptr) ? ptrToFd(stdinWrite) : -1;
     const int outFd = (stdoutRead != nullptr) ? ptrToFd(stdoutRead) : -1;
+    bool stdinWriteNeedsClose = false; // set below only if cancel() has not taken ownership already
 
     const std::string cmd = "ucinewgame\n" + positionArg + "\ngo movetime " + std::to_string(movetimeMs) + "\nquit\n";
     size_t off = 0;
@@ -582,11 +618,12 @@ void StockfishEngine::runWorker(std::string positionArg, int movetimeMs) {
         else if (w < 0 && errno == EINTR) continue;
         else break;
     }
-    if (inFd >= 0) close(inFd);
     {
         std::lock_guard lock(mutex);
+        stdinWriteNeedsClose = (stdinWrite != nullptr);
         stdinWrite = nullptr;
     }
+    if (stdinWriteNeedsClose && inFd >= 0) close(inFd);
 
     std::string line, best;
     bool gotBest = false;
@@ -620,7 +657,7 @@ void StockfishEngine::runWorker(std::string positionArg, int movetimeMs) {
     if (processHandle != -1) {
         const pid_t pid = processHandle;
         int wstatus = 0;
-        while (waitpid(pid, &wstatus) < 0 && errno == EINTR) {}
+        while (waitpid(pid, &wstatus, 0) < 0 && errno == EINTR) {}
         if (WIFEXITED(wstatus)) exitCode = WEXITSTATUS(wstatus);
         else exitCode = -42; // e.g. killed by cancel(); status then reset to Idle
     }
@@ -635,7 +672,7 @@ void StockfishEngine::runWorker(std::string positionArg, int movetimeMs) {
             status.store(EngineStatus::Error);
             error = "Engine has no move; position should be finished.";
         } else if (exitCode == 127) {
-        status.store(EngineStatus::Error);
+            status.store(EngineStatus::Error);
             error = "Stockfish binary not found: '" + exePath + "'. Press 'F' to set its path.";
         } else {
             status.store(EngineStatus::Error);
@@ -657,23 +694,44 @@ static std::string colorName(ChessColor c) {
     }
 }
 
+// Default engine binary location relative to the repository root
+// (can be overridden in-game with the 'F' key).
+#ifdef _WIN32
+static const std::string ENGINE_DEFAULT = ".\\stockfish windows\\stockfish-windows-x86-64-universal.exe";
+#else
+static const std::string ENGINE_DEFAULT = "./stockfish linux/stockfish-linux-x86-64-universal";
+#endif
+
 
 ChessGame::ChessGame()
     : window(sf::VideoMode(static_cast<unsigned>(BOARD_PIXELS),
                            static_cast<unsigned>(BOARD_PIXELS + STATUS_HEIGHT)),
              "Chess - White's Turn (Press R to restart)",
              sf::Style::Titlebar | sf::Style::Close),
-      engine("stockfish"),
       currentTurn(ChessColor::White),
-      isGameOver(false) {
+      isGameOver(false),
+      engine(ENGINE_DEFAULT) {
     window.setFramerateLimit(60);
 
+    // Pieces are drawn with unicode glyphs, so the font must carry the
+    // chess-block characters; candidate fonts are rejected otherwise.
     const char* fontCandidates[] = {
         "DejaVuSans.ttf",
+#ifdef _WIN32
+        "C:/Windows/Fonts/arialbd.ttf",
+        "C:/Windows/Fonts/arial.ttf",
+#else
         "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf",
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"};
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+#endif
+    };
     for (const char* f : fontCandidates) {
-        if (font.openFromFile(f)) { fontLoaded = true; break; }
+        sf::Font candidate;
+        if (!candidate.loadFromFile(f)) continue;
+        if (!candidate.hasGlyph(0x265B) || !candidate.hasGlyph(0x265F)) continue; // king & pawn
+        font = candidate;
+        fontLoaded = true;
+        break;
     }
 
     updateWindowTitle();
@@ -702,8 +760,8 @@ void ChessGame::processEvents() {
                 if (botMode) startEngineIfNeeded();
                 updateWindowTitle();
             }
-        } else if (event.type == sf::Event::Text) {
-            const sf::Uint32 t = event.text;
+        } else if (event.type == sf::Event::TextEntered) {
+            const sf::Uint32 t = event.text.unicode;
             if (!enginePathInput) {
                 if (t == 'f' || t == 'F') { enginePathInput = true; enginePathBuffer.clear(); }
             } else if (t == '\r' || t == '\n') {
@@ -988,22 +1046,72 @@ void ChessGame::drawPiece(const ChessSquare& square, const ChessPiece& piece) {
         return;
     }
 
-    // Fallback without a usable font: chess men as flat discs (like Checkers),
-    // kings get a gold ring like promoted checkers pieces.
-    float radius = TILE_SIZE * (piece.type == PieceType::King ? 0.42f : 0.40f);
-    if (piece.type == PieceType::Pawn) radius = TILE_SIZE * 0.32f;
+    // Fallback without a usable font: each piece type gets its own texture
+    // silhouette, so pawn/rook/knight/bishop/queen/king are easy to tell apart.
+    const sf::Color fill = whiteSide ? sf::Color(246, 244, 238) : sf::Color(46, 41, 35);
+    const sf::Color edge = whiteSide ? sf::Color(80, 76, 70) : sf::Color(14, 12, 10);
+    const float r = TILE_SIZE * 0.34f; // silhouette scale
 
-    sf::CircleShape disc(radius);
-    disc.setOrigin(radius, radius);
-    disc.setPosition(cx, cy);
-    disc.setFillColor(whiteSide ? sf::Color(245, 242, 235) : sf::Color(35, 30, 28));
-    disc.setOutlineColor(whiteSide ? sf::Color(70, 70, 70) : sf::Color(30, 30, 30));
-    disc.setOutlineThickness(whiteSide ? 2.5f : 2.f);
-    if (piece.type == PieceType::King) {
-        disc.setOutlineColor(sf::Color(255, 215, 0));
-        disc.setOutlineThickness(4.f);
+    const auto putCircle = [&](float x, float y, float rad) {
+        sf::CircleShape c(rad);
+        c.setOrigin(rad, rad);
+        c.setPosition(x, y);
+        c.setFillColor(fill);
+        c.setOutlineColor(edge);
+        c.setOutlineThickness(1.5f);
+        window.draw(c);
+    };
+    const auto putRect = [&](float x, float y, float w, float h) {
+        sf::RectangleShape s(sf::Vector2f(w * r, h * r));
+        s.setPosition(x - w * r * 0.5f, y - h * r * 0.5f);
+        s.setFillColor(fill);
+        s.setOutlineColor(edge);
+        s.setOutlineThickness(1.3f);
+        window.draw(s);
+    };
+    // Points given in units of r relative to the piece centre.
+    const auto putPoly = [&](std::initializer_list<std::pair<float, float>> pts) {
+        sf::ConvexShape p(pts.size());
+        std::size_t i = 0;
+        for (const auto& pt : pts)
+            p.setPoint(i++, sf::Vector2f(cx + pt.first * r, cy + pt.second * r));
+        p.setFillColor(fill);
+        p.setOutlineColor(edge);
+        p.setOutlineThickness(1.3f);
+        window.draw(p);
+    };
+
+    switch (piece.type) {
+    case PieceType::Pawn: // round head on a wide base
+        putCircle(cx, cy + 0.28f * r, 0.55f * r);
+        putCircle(cx, cy - 0.5f * r, 0.28f * r);
+        break;
+    case PieceType::Rook: // keeps with three merlons
+        putRect(cx, cy + 0.28f * r, 1.15f, 0.55f);
+        putRect(cx - 0.44f * r, cy - 0.15f * r, 0.22f, 0.26f);
+        putRect(cx, cy - 0.15f * r, 0.22f, 0.26f);
+        putRect(cx + 0.44f * r, cy - 0.15f * r, 0.22f, 0.26f);
+        break;
+    case PieceType::Knight: // asymmetric helmet with an ear
+        putPoly({{-0.58f, 0.58f}, {0.38f, 0.58f}, {0.30f, -0.62f}});
+        putCircle(cx + 0.42f * r, cy - 0.55f * r, 0.16f * r);
+        break;
+    case PieceType::Bishop: // tall pointed tiara with a ball on top
+        putPoly({{-0.52f, 0.58f}, {0.52f, 0.58f}, {0.0f, -0.52f}});
+        putCircle(cx, cy - 0.62f * r, 0.15f * r);
+        break;
+    case PieceType::Queen: // coronet: three pearls over a flared base
+        putPoly({{-0.28f, -0.32f}, {0.28f, -0.32f}, {0.6f, 0.55f}, {-0.6f, 0.55f}});
+        putCircle(cx - 0.3f * r, cy - 0.4f * r, 0.13f * r);
+        putCircle(cx, cy - 0.52f * r, 0.13f * r);
+        putCircle(cx + 0.3f * r, cy - 0.4f * r, 0.13f * r);
+        break;
+    case PieceType::King: // cross on a crowned body
+        putCircle(cx, cy + 0.32f * r, 0.42f * r);
+        putRect(cx, cy - 0.18f * r, 0.14f, 0.72f);
+        putRect(cx, cy - 0.3f * r, 0.5f, 0.14f);
+        break;
     }
-    window.draw(disc);
 }
 
 std::string ChessGame::buildPositionArgument() const {

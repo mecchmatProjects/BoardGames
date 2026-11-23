@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeParseArguments.cmake
+C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/cmake/CompilerWarnings.cmake
+C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/cmake/Macros.cmake
+C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-src/src/SFML/CMakeLists.txt
