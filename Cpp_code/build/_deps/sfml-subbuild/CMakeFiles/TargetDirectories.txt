@@ -1,3 +1,0 @@
-C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
-C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-subbuild/CMakeFiles/ALL_BUILD.dir
-C:/Users/markp/Documents/BoardGames/Cpp_code/build/_deps/sfml-subbuild/CMakeFiles/ZERO_CHECK.dir
