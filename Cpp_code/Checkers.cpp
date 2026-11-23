@@ -1,4 +1,4 @@
-#include "checkers.h"
+#include "Checkers.h"
 #include <cmath>
 
 

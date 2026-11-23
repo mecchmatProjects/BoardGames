@@ -1,4 +1,4 @@
-#include "checkers.h"
+#include "Checkers.h"
 
 int main() {
     Game checkersGame;

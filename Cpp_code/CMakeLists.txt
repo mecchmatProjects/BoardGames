@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(CheckersSFML VERSION 1.0 LANGUAGES CXX)
+project(BoardGamesSFML VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -16,18 +16,25 @@ FetchContent_MakeAvailable(SFML)
 
 add_executable(checkers
         main.cpp
-        checkers.cpp
+        Checkers.cpp
 )
-
 target_link_libraries(checkers PRIVATE sfml-graphics)
 
+add_executable(chess
+        chess_main.cpp
+        Chess.cpp
+)
+target_link_libraries(chess PRIVATE sfml-graphics)
+
 if(WIN32)
-    add_custom_command(TARGET checkers POST_BUILD
-            COMMAND "${CMAKE_COMMAND}" -E copy_if_different
-            "$<TARGET_FILE:sfml-graphics>"
-            "$<TARGET_FILE:sfml-window>"
-            "$<TARGET_FILE:sfml-system>"
-            "$<TARGET_FILE_DIR:checkers>"
-            VERBATIM
-    )
+    foreach(game checkers chess)
+        add_custom_command(TARGET ${game} POST_BUILD
+                COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+                "$<TARGET_FILE:sfml-graphics>"
+                "$<TARGET_FILE:sfml-window>"
+                "$<TARGET_FILE:sfml-system>"
+                "$<TARGET_FILE_DIR:${game}>"
+                VERBATIM
+        )
+    endforeach()
 endif()
