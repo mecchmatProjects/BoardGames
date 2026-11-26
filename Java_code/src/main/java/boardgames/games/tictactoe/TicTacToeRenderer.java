@@ -1,20 +1,31 @@
 package boardgames.games.tictactoe;
 
 import boardgames.core.Coordinate;
+import boardgames.core.Game;
+import boardgames.core.Move;
 import boardgames.core.PlayerRole;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
- * Відповідає лише за текстове представлення поля та знаків гравців.
+ * Текстове представлення поля та знаків гравців.
+ * {@code implements BoardRenderer<Move.Place>} та {@code @Override} до {@link #render(Game)}.
  */
 public class TicTacToeRenderer {
 
     private static final char EMPTY_CELL = ' ';
     private static final char INFINITE_EMPTY_CELL = '.';
     private static final int INFINITE_MARGIN = 2;
+
+    private final PrintStream out;
+
+    public TicTacToeRenderer(PrintStream out) {
+        this.out = Objects.requireNonNull(out);
+    }
 
     public static char symbolOf(PlayerRole player) {
         return switch (player) {
@@ -23,9 +34,19 @@ public class TicTacToeRenderer {
         };
     }
 
-    public String render(TicTacToeGame game) {
+    /** Виводить поле у потік, переданий у конструкторі (сигнатура відповідає очікуваному BoardRenderer). */
+    public void render(Game<Move.Place> game) {
+        if (!(game instanceof TicTacToeGame ticTacToe)) {
+            throw new IllegalArgumentException("Очікувалась гра TicTacToeGame, отримано: "
+                    + (game == null ? "null" : game.getClass().getSimpleName()));
+        }
+        out.println(format(ticTacToe));
+    }
+
+    /** Повертає текстове представлення поля (зручно для тестів). */
+    public String format(TicTacToeGame game) {
         if (game.isInfinite()) {
-            return renderInfinite(game);
+            return formatInfinite(game);
         }
         int size = game.getSize();
         int width = String.valueOf(size).length();
@@ -33,18 +54,18 @@ public class TicTacToeRenderer {
                 + String.join("+", Collections.nCopies(size, "-".repeat(width + 2)));
 
         List<String> lines = new ArrayList<>();
-        lines.add(renderHeader(size, width));
+        lines.add(formatHeader(size, width));
         for (int row = 0; row < size; row++) {
             if (row > 0) {
                 lines.add(separator);
             }
-            lines.add(renderRow(game, row, width));
+            lines.add(formatRow(game, row, width));
         }
         return String.join(System.lineSeparator(), lines);
     }
 
     /** Показує прямокутник навколо зайнятих клітинок (і центру) з відступом. */
-    private String renderInfinite(TicTacToeGame game) {
+    private String formatInfinite(TicTacToeGame game) {
         int minRow = 0, maxRow = 0, minCol = 0, maxCol = 0;
         for (Coordinate c : game.getOccupiedCoordinates()) {
             minRow = Math.min(minRow, c.row());
@@ -73,7 +94,7 @@ public class TicTacToeRenderer {
         return sb.toString();
     }
 
-    private String renderHeader(int size, int width) {
+    private String formatHeader(int size, int width) {
         List<String> labels = new ArrayList<>();
         for (int col = 1; col <= size; col++) {
             labels.add(pad(String.valueOf(col), width));
@@ -81,7 +102,7 @@ public class TicTacToeRenderer {
         return " ".repeat(width + 2) + String.join("   ", labels);
     }
 
-    private String renderRow(TicTacToeGame game, int row, int width) {
+    private String formatRow(TicTacToeGame game, int row, int width) {
         List<String> cells = new ArrayList<>();
         for (int col = 0; col < game.getSize(); col++) {
             cells.add(pad(String.valueOf(cellSymbol(game, new Coordinate(row, col))), width));

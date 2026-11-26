@@ -12,8 +12,6 @@ import java.util.Scanner;
  */
 public class TicTacToeConsoleSession {
 
-    private static final String QUIT_COMMAND = "q";
-
     private final TicTacToeGame game;
     private final TicTacToeRenderer renderer;
     private final MoveInputParser parser;
@@ -22,25 +20,30 @@ public class TicTacToeConsoleSession {
 
     public TicTacToeConsoleSession(TicTacToeGame game, Scanner scanner, PrintStream out) {
         this.game = game;
-        this.renderer = new TicTacToeRenderer();
-        this.parser = new MoveInputParser(game.getSize());
+        this.renderer = new TicTacToeRenderer(out);
+        this.parser = new MoveInputParser(game);
         this.scanner = scanner;
         this.out = out;
     }
 
-    public void run() {
+    /**
+     * @return {@code true}, якщо гру завершено (перемога чи нічия);
+     *         {@code false}, якщо користувач вийшов або ввід закінчився
+     */
+    public boolean run() {
         printWelcome();
         while (!game.getResult().isFinished()) {
             out.println();
-            out.println(renderer.render(game));
+            renderer.render(game);
             if (!playTurn()) {
                 out.println("Гру перервано.");
-                return;
+                return false;
             }
         }
         out.println();
-        out.println(renderer.render(game));
+        renderer.render(game);
         printResult(game.getResult());
+        return true;
     }
 
     private void printWelcome() {
@@ -48,7 +51,7 @@ public class TicTacToeConsoleSession {
         out.println(game.getRules());
         out.println("Вводьте хід як \"рядок стовпець\" (наприклад: "
                 + (game.isInfinite() ? "2 -3" : "2 3")
-                + "). Для виходу — \"" + QUIT_COMMAND + "\".");
+                + "). Для виходу — \"" + ConsoleCommands.QUIT + "\".");
     }
 
     /**
@@ -63,7 +66,7 @@ public class TicTacToeConsoleSession {
                 return false;
             }
             String line = scanner.nextLine();
-            if (QUIT_COMMAND.equalsIgnoreCase(line.trim())) {
+            if (ConsoleCommands.isQuit(line)) {
                 return false;
             }
             if (tryMakeMove(line)) {

@@ -24,7 +24,7 @@ import java.util.Set;
 public class TicTacToeGame implements Game<Move.Place> {
 
     private static final int MIN_SIZE = 3;
-    private static final int INFINITE = 0;
+    private static final int INFINITE = GameMode.INFINITE.getSize();
 
     /** Напрямки (рядок, стовпець): горизонталь, вертикаль, дві діагоналі. */
     private static final int[][] DIRECTIONS = {{0, 1}, {1, 0}, {1, 1}, {1, -1}};

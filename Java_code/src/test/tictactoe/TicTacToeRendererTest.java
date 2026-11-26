@@ -2,24 +2,30 @@ package tictactoe;
 
 import boardgames.core.Move;
 import boardgames.core.PlayerRole;
+import boardgames.games.tictactoe.GameMode;
 import boardgames.games.tictactoe.TicTacToeGame;
 import boardgames.games.tictactoe.TicTacToeRenderer;
+import org.junit.jupiter.api.Test;
 
-public class TicTacToeRendererTest {
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 
-    private static final TicTacToeRenderer RENDERER = new TicTacToeRenderer();
-    private static int failed = 0;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-    public static void main(String[] args) {
-        rendersEmptyBoard();
-        rendersPlacedMarks();
-        mapsPlayersToSymbols();
+class TicTacToeRendererTest {
 
-        System.out.println();
-        System.out.println(failed == 0 ? "Усі тести пройдено." : "Провалено тестів: " + failed);
+    private final ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+    private final TicTacToeRenderer renderer =
+            new TicTacToeRenderer(new PrintStream(buffer, true, StandardCharsets.UTF_8));
+
+    private static String lines(String... rows) {
+        return String.join(System.lineSeparator(), rows);
     }
 
-    private static void rendersEmptyBoard() {
+    @Test
+    void rendersEmptyBoard() {
         String expected = lines(
                 "   1   2   3",
                 "1    |   |   ",
@@ -27,10 +33,11 @@ public class TicTacToeRendererTest {
                 "2    |   |   ",
                 "  ---+---+---",
                 "3    |   |   ");
-        check("rendersEmptyBoard", expected, RENDERER.render(new TicTacToeGame()));
+        assertEquals(expected, renderer.format(new TicTacToeGame()));
     }
 
-    private static void rendersPlacedMarks() {
+    @Test
+    void rendersPlacedMarks() {
         TicTacToeGame game = new TicTacToeGame();
         game.makeMove(new Move.Place(0, 0)); // X
         game.makeMove(new Move.Place(0, 1)); // O
@@ -44,28 +51,75 @@ public class TicTacToeRendererTest {
                 "2    | X |   ",
                 "  ---+---+---",
                 "3  O |   |   ");
-        check("rendersPlacedMarks", expected, RENDERER.render(game));
+        assertEquals(expected, renderer.format(game));
     }
 
-    private static void mapsPlayersToSymbols() {
-        check("symbol FIRST", 'X', TicTacToeRenderer.symbolOf(PlayerRole.FIRST));
-        check("symbol SECOND", 'O', TicTacToeRenderer.symbolOf(PlayerRole.SECOND));
+    @Test
+    void mapsPlayersToSymbols() {
+        assertEquals('X', TicTacToeRenderer.symbolOf(PlayerRole.FIRST));
+        assertEquals('O', TicTacToeRenderer.symbolOf(PlayerRole.SECOND));
     }
 
-    private static String lines(String... rows) {
-        return String.join(System.lineSeparator(), rows);
+    @Test
+    void renderWritesBoardToOutputStream() {
+        TicTacToeGame game = new TicTacToeGame();
+        renderer.render(game);
+        String expected = renderer.format(game) + System.lineSeparator();
+        assertEquals(expected, buffer.toString(StandardCharsets.UTF_8));
     }
 
-    private static void check(String name, Object expected, Object actual) {
-        if (expected.equals(actual)) {
-            System.out.println("OK   " + name);
-        } else {
-            failed++;
-            System.out.println("FAIL " + name);
-            System.out.println("--- очікувалось:");
-            System.out.println(expected);
-            System.out.println("--- отримано:");
-            System.out.println(actual);
-        }
+    @Test
+    void renderRejectsNull() {
+        assertThrows(IllegalArgumentException.class, () -> renderer.render(null));
+    }
+
+    // ---------- нескінченне поле (GameMode.INFINITE) ----------
+
+    @Test
+    void rendersEmptyInfiniteBoardAroundOrigin() {
+        String expected = lines(
+                "      -2 -1  0  1  2",
+                "  -2   .  .  .  .  .",
+                "  -1   .  .  .  .  .",
+                "   0   .  .  .  .  .",
+                "   1   .  .  .  .  .",
+                "   2   .  .  .  .  .");
+        assertEquals(expected, renderer.format(new TicTacToeGame(GameMode.INFINITE)));
+    }
+
+    @Test
+    void rendersMarkOnInfiniteBoard() {
+        TicTacToeGame game = new TicTacToeGame(GameMode.INFINITE);
+        game.makeMove(new Move.Place(0, 0)); // X
+        String expected = lines(
+                "      -2 -1  0  1  2",
+                "  -2   .  .  .  .  .",
+                "  -1   .  .  .  .  .",
+                "   0   .  .  X  .  .",
+                "   1   .  .  .  .  .",
+                "   2   .  .  .  .  .");
+        assertEquals(expected, renderer.format(game));
+    }
+
+    @Test
+    void infiniteBoardGrowsToIncludeFarAndNegativeCells() {
+        TicTacToeGame game = new TicTacToeGame(GameMode.INFINITE);
+        game.makeMove(new Move.Place(0, 0));   // X
+        game.makeMove(new Move.Place(3, -2));  // O
+
+        String[] rendered = renderer.format(game).split(System.lineSeparator());
+        // рядки -2..5 (8 шт.) + заголовок
+        assertEquals(9, rendered.length);
+        // стовпці -4..2 (7 шт.) -> заголовок
+        assertEquals("      -4 -3 -2 -1  0  1  2", rendered[0]);
+        assertEquals("   0   .  .  .  .  X  .  .", rendered[3]); // рядок 0
+        assertEquals("   3   .  .  O  .  .  .  .", rendered[6]); // рядок 3, стовпець -2
+    }
+
+    @Test
+    void infiniteRenderWritesToOutputStream() {
+        TicTacToeGame game = new TicTacToeGame(GameMode.INFINITE);
+        renderer.render(game);
+        assertEquals(renderer.format(game) + System.lineSeparator(), buffer.toString(StandardCharsets.UTF_8));
     }
 }

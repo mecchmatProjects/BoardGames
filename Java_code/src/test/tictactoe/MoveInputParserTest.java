@@ -1,88 +1,115 @@
 package tictactoe;
 
 import boardgames.core.Move;
+import boardgames.games.tictactoe.GameMode;
 import boardgames.games.tictactoe.MoveInputParser;
+import boardgames.games.tictactoe.TicTacToeGame;
+import org.junit.jupiter.api.Test;
 
-public class MoveInputParserTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-    private static final MoveInputParser PARSER = new MoveInputParser(3);
-    private static int failed = 0;
+class MoveInputParserTest {
 
-    public static void main(String[] args) {
-        parsesSpaceSeparatedInputAsZeroBased();
-        parsesCommaSeparatedInputWithExtraSpaces();
-        parsesCornerValues();
-        rejectsNullAndBlankInput();
-        rejectsNonNumericInput();
-        rejectsWrongNumberOfValues();
-        rejectsOutOfRangeCoordinates();
+    private final MoveInputParser parser = new MoveInputParser(new TicTacToeGame());
+    private final MoveInputParser infiniteParser = new MoveInputParser(new TicTacToeGame(GameMode.INFINITE));
 
-        System.out.println();
-        System.out.println(failed == 0 ? "Усі тести пройдено." : "Провалено тестів: " + failed);
+    private void assertRejected(MoveInputParser p, String input) {
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> p.parse(input));
+        assertFalse(e.getMessage() == null || e.getMessage().isBlank(),
+                "Повідомлення про помилку не має бути порожнім");
     }
 
-    private static void parsesSpaceSeparatedInputAsZeroBased() {
-        check("space separated", new Move.Place(1, 2), PARSER.parse("2 3"));
+    // ---------- скінченне поле ----------
+
+    @Test
+    void parsesSpaceSeparatedInputAsZeroBased() {
+        assertEquals(new Move.Place(1, 2), parser.parse("2 3"));
     }
 
-    private static void parsesCommaSeparatedInputWithExtraSpaces() {
-        check("comma separated", new Move.Place(0, 0), PARSER.parse("  1 ,  1 "));
-        check("comma without spaces", new Move.Place(2, 1), PARSER.parse("3,2"));
+    @Test
+    void parsesCommaSeparatedInputWithExtraSpaces() {
+        assertEquals(new Move.Place(0, 0), parser.parse("  1 ,  1 "));
+        assertEquals(new Move.Place(2, 1), parser.parse("3,2"));
     }
 
-    private static void parsesCornerValues() {
-        check("min corner", new Move.Place(0, 0), PARSER.parse("1 1"));
-        check("max corner", new Move.Place(2, 2), PARSER.parse("3 3"));
+    @Test
+    void parsesCornerValues() {
+        assertEquals(new Move.Place(0, 0), parser.parse("1 1"));
+        assertEquals(new Move.Place(2, 2), parser.parse("3 3"));
     }
 
-    private static void rejectsNullAndBlankInput() {
-        checkRejected("null", null);
-        checkRejected("empty", "");
-        checkRejected("blank", "   ");
+    @Test
+    void rejectsNullAndBlankInput() {
+        assertRejected(parser, null);
+        assertRejected(parser, "");
+        assertRejected(parser, "   ");
     }
 
-    private static void rejectsNonNumericInput() {
-        checkRejected("letters", "a b");
-        checkRejected("one letter", "1 b");
-        checkRejected("decimal", "1.5 2");
-        checkRejected("too big number", "99999999999 1");
+    @Test
+    void rejectsNonNumericInput() {
+        assertRejected(parser, "a b");
+        assertRejected(parser, "1 b");
+        assertRejected(parser, "1.5 2");
+        assertRejected(parser, "99999999999 1");
     }
 
-    private static void rejectsWrongNumberOfValues() {
-        checkRejected("one value", "1");
-        checkRejected("three values", "1 2 3");
+    @Test
+    void rejectsWrongNumberOfValues() {
+        assertRejected(parser, "1");
+        assertRejected(parser, "1 2 3");
     }
 
-    private static void rejectsOutOfRangeCoordinates() {
-        checkRejected("row zero", "0 1");
-        checkRejected("col too big", "1 4");
-        checkRejected("negative", "-1 2");
+    @Test
+    void rejectsOutOfRangeCoordinates() {
+        assertRejected(parser, "0 1");
+        assertRejected(parser, "1 4");
+        assertRejected(parser, "-1 2");
     }
 
-    private static void check(String name, Object expected, Object actual) {
-        if (expected.equals(actual)) {
-            System.out.println("OK   " + name);
-        } else {
-            failed++;
-            System.out.println("FAIL " + name);
-            System.out.println("--- очікувалось: " + expected);
-            System.out.println("--- отримано:    " + actual);
-        }
+    // ---------- нескінченне поле (GameMode.INFINITE) ----------
+
+    @Test
+    void infiniteParsesCoordinatesAsIs() {
+        assertEquals(new Move.Place(2, 3), infiniteParser.parse("2 3"));
+        assertEquals(new Move.Place(0, 0), infiniteParser.parse("0 0"));
     }
 
-    /** Перевіряє, що парсер кидає IllegalArgumentException з непорожнім повідомленням. */
-    private static void checkRejected(String name, String input) {
-        try {
-            Move.Place result = PARSER.parse(input);
-            failed++;
-            System.out.println("FAIL " + name + " — очікувався виняток, отримано " + result);
-        } catch (IllegalArgumentException e) {
-            if (e.getMessage() == null || e.getMessage().isBlank()) {
-                failed++;
-                System.out.println("FAIL " + name + " — порожнє повідомлення про помилку");
-            } else {
-                System.out.println("OK   " + name + "  →  " + e.getMessage());
-            }
-        }
+    @Test
+    void infiniteAcceptsNegativeCoordinates() {
+        assertEquals(new Move.Place(2, -3), infiniteParser.parse("2 -3"));
+        assertEquals(new Move.Place(-1, -1), infiniteParser.parse("-1 -1"));
+    }
+
+    @Test
+    void infiniteAcceptsCommaSeparatedValues() {
+        assertEquals(new Move.Place(-5, 40), infiniteParser.parse(" -5 ,  40 "));
+    }
+
+    @Test
+    void infiniteAcceptsLimitValues() {
+        int limit = MoveInputParser.INFINITE_LIMIT;
+        assertEquals(new Move.Place(limit, -limit), infiniteParser.parse(limit + " -" + limit));
+    }
+
+    @Test
+    void infiniteRejectsCoordinatesBeyondLimit() {
+        int over = MoveInputParser.INFINITE_LIMIT + 1;
+        assertRejected(infiniteParser, over + " 0");
+        assertRejected(infiniteParser, "0 -" + over);
+        assertRejected(infiniteParser, "100000 100000");
+        assertRejected(infiniteParser, Integer.MAX_VALUE + " " + Integer.MIN_VALUE);
+    }
+
+    @Test
+    void infiniteRejectsInvalidInput() {
+        assertRejected(infiniteParser, null);
+        assertRejected(infiniteParser, "   ");
+        assertRejected(infiniteParser, "1");
+        assertRejected(infiniteParser, "1 2 3");
+        assertRejected(infiniteParser, "a -1");
+        assertRejected(infiniteParser, "1.5 2");
+        assertRejected(infiniteParser, "99999999999 1");
     }
 }

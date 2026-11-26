@@ -9,8 +9,6 @@ import java.util.Scanner;
  */
 public class GameModeSelector {
 
-    private static final String QUIT_COMMAND = "q";
-
     private final Scanner scanner;
     private final PrintStream out;
 
@@ -32,14 +30,15 @@ public class GameModeSelector {
                 return Optional.empty();
             }
             String line = scanner.nextLine().trim();
-            if (QUIT_COMMAND.equalsIgnoreCase(line)) {
+            if (ConsoleCommands.isQuit(line)) {
                 return Optional.empty();
             }
             Optional<GameMode> mode = parseChoice(line, modes);
             if (mode.isPresent()) {
                 return mode;
             }
-            out.println("Помилка: введіть число від 1 до " + modes.length + " або \"" + QUIT_COMMAND + "\".");
+            out.println("Помилка: введіть число від 1 до " + modes.length
+                    + " або \"" + ConsoleCommands.QUIT + "\".");
         }
     }
 
@@ -48,7 +47,7 @@ public class GameModeSelector {
         for (int i = 0; i < modes.length; i++) {
             out.printf("  %d — %s%n", i + 1, modes[i].getLabel());
         }
-        out.println("  " + QUIT_COMMAND + " — вихід");
+        out.println("  " + ConsoleCommands.QUIT + " — вихід");
     }
 
     private Optional<GameMode> parseChoice(String line, GameMode[] modes) {
